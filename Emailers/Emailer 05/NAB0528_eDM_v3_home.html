@@ -1,0 +1,482 @@
+<!DOCTYPE html PUBLIC"-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+    <!--[if gte mso 9]><xml>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+  <o:PixelsPerInch>96</o:PixelsPerInch>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A Simple Responsive HTML Emailer 05</title>
+    <style type="text/css">
+        /* General Classes for cross Email client rendering ease.*/
+        
+        a {
+            padding: 0;
+            text-decoration: none;
+        }
+        
+        body {
+            width: 100% !important;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            margin: 0;
+            padding: 0;
+            mso-line-height-rule: exactly;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #eff1f3;
+        }
+        
+        @media only screen and (max-width: 600px) {
+            .emailnomob {
+                display: none !important;
+            }
+            .makeFluid {
+                width: 100% !important;
+                height: auto !important;
+            }
+            a[x-apple-data-detectors] {
+                color: inherit !important;
+                text-decoration: none !important;
+                font-size: inherit !important;
+                font-family: inherit !important;
+                font-weight: inherit !important;
+                line-height: inherit !important;
+            }
+            .gmail {
+                display: block!important;
+                width: auto!important;
+                overflow: visible!important;
+                float: none !important;
+                height: inherit!important;
+                max-height: inherit!important;
+            }
+            .header {
+                padding: 10px 10px 10px 0px !important;
+            }
+            .innerWrapper {
+                width: 320px !important;
+                margin: 0 !important;
+                min-width: 320px !important;
+            }
+            .nopadding {
+                padding: 0 !important;
+            }
+            .left-right-pad-8 {
+                padding-left: 8px !important;
+                padding-right: 8px !important;
+            }
+            .font-size-12 {
+                font-size: 12px !important;
+            }
+            .font-size-13 {
+                font-size: 13px !important;
+            }
+            .font-size-16 {
+                font-size: 16px !important;
+            }
+            .font-size-24 {
+                font-size: 24px !important;
+            }
+            .table-header {
+                padding: 16px 11px 16px 11px !important;
+            }
+            .table-row-padding {
+                padding: 15px 15px 15px 11px !important;
+            }
+            .table-row-width {
+                width: 190px !important;
+            }
+            .table-content-bottom-pad {
+                padding-bottom: 40px !important;
+            }
+            .no-top-pad {
+                padding-top: 0 !important;
+            }
+            .no-bottom-pad {
+                padding-bottom: 0px !important;
+            }
+            .bottom-pad-8 {
+                padding-bottom: 8px !important;
+            }
+            .bottom-pad-10 {
+                padding-bottom: 10px !important;
+            }
+            .bottom-pad-20 {
+                padding-bottom: 20px !important;
+            }
+            .bottom-pad-25 {
+                padding-bottom: 25px !important;
+            }
+            .bottom-pad-40 {
+                padding-bottom: 40px !important;
+            }
+            .no-line-height {
+                line-height: 0px !important;
+            }
+            .no-left-pad {
+                padding-left: 0px !important;
+            }
+            .no-right-pad {
+                padding-right: 0px !important;
+            }
+            .line-height-28 {
+                line-height: 28px !important;
+            }
+            .line-height-29 {
+                line-height: 29px !important;
+            }
+            .bg-color {
+                background-color: #f1f2f6 !important;
+            }
+            .bottom-pad-77 {
+                padding-bottom: 77px !important;
+            }
+            .black-strip {
+                padding: 27px 0 19px 0 !important;
+                font-size: 14px;
+            }
+            .stackCol {
+                display: block !important;
+            }
+            .padding-mobile {
+                padding: 40px 19px 40px 19px !important;
+            }
+            .padding-divider {
+                padding: 0px 0 30px 0 !important;
+            }
+            .height55 {
+                height: 55px !important;
+            }
+            .black-strip-mob-padding {
+                padding: 18px 10px 18px 10px !important;
+            }
+            .width50pc {
+                width: 50% !important;
+            }
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            .stack-column {
+                text-align: left !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+            .footer {
+                padding: 30px 24px 0 19px!important;
+            }
+            .text-align-center {
+                text-align: center !important;
+            }
+        }
+    </style>
+</head>
+
+<body style="padding:0px; margin:0;-webkit-text-size-adjust:none; background-color:#eff1f3;">
+    <!-- Wrapper table begins -->
+    <table width="100%" bgcolor="#eff1f3" align="center" border="0" cellspacing="0" cellpadding="0" style="background-color:#eff1f3;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+        <tbody>
+            <tr>
+                <td align="center" valign="top">
+                    <!-- Inner table begins -->
+                    <table width="600" style="min-width:600px; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" border="0" cellspacing="0" cellpadding="0" class="innerWrapper">
+                        <tbody>
+                            <tr>
+                                <td align="center" valign="top">
+                                    <table style="width:100%; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" border="0" cellspacing="0" cellpadding="0">
+                                        <tbody>
+                                            <!-- Row 1 Starts Header -->
+                                            <tr>
+                                                <td class="header" align="center" valign="top" style="padding: 24px 0 26px 0; font-family:Arial, Helvetica, sans-serif; font-size: 12px;">
+                                                    Having trouble viewing this email? <a href="https://www.nab.com.au" style="color:#c20000; text-decoration: none;border-bottom: 1px solid #c20000;">View online</a>
+                                                </td>
+                                            </tr>
+                                            <!-- Row 1 ends Header-->
+                                            <!-- ************************************** -->
+                                            <!-- Row 2 Starts -->
+                                            <tr>
+                                                <td align="center" valign="top">
+                                                    <table style="background-color:#ffffff;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" border="0" cellspacing="0" cellpadding="0">
+                                                        <tbody>
+                                                            <!-- Row 2.1 Starts Heroimage-->
+                                                            <tr>
+                                                                <td align="center" valign="top">
+                                                                    <!--[if !mso 9]><!-->
+                                                                    <div class="gmail" style="display: none; width: 0; overflow: hidden;  max-height: 0; mso-hide:all;">
+                                                                        <img height="1" border="0" src="https://imgur.com/LIJYkEo.png" alt="NAB Property" class="makeFluid" style="width:1px;display: block; border: none;" />
+                                                                    </div>
+                                                                    <!--<![endif]-->
+                                                                    <img class="emailnomob" border="0" style="width:600px;display:block; border-style:none; min-width:600px;" src="https://imgur.com/zcWyKQA.png" alt="NAB Property" />
+                                                                </td>
+                                                            </tr>
+                                                            <!-- Row 2.1 Ends Heroimage -->
+                                                            <!-- ***************** -->
+                                                            <!-- Row 2.2 Starts Content-->
+                                                            <tr>
+                                                                <td align="left" valign="top" class="padding-mobile" style="padding:47px 60px 47px 60px;">
+                                                                    <table style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" border="0" cellspacing="0" cellpadding="0">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td class="font-size-16" align="left" valign="top" style="font-size: 18px; font-weight: bold; padding-bottom: 20px;">
+                                                                                    Hi, &lt;name&gt;
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="font-size-16" align="left" valign="top" style="font-size: 18px; font-weight: normal; padding-bottom: 19px;line-height:27px;">
+                                                                                    Thanks for requesting a NAB &lt;Property/Suburb&gt; Report for &lt;address or suburb&gt;.
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="font-size-16" align="left" valign="top" style="font-size: 18px; font-weight: normal; padding-bottom: 23px;line-height:27px;">
+                                                                                    Inside your report you'll find an estimated property value, sales and rental history and suburb insights. Just some of the facts that will help you on your home ownership journey.
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td align="left" valign="top">
+                                                                                    <!--[if !mso 9]><!-->
+                                                                                    <div class="gmail" style="display: none; width: 0; overflow: hidden;  max-height: 0; mso-hide:all;">
+                                                                                        <img height="1" border="0" src="https://i.imgur.com/J49cGng.png" alt="NAB Property" class="makeFluid" style="width:280px;display: block; border: none;" />
+                                                                                    </div>
+                                                                                    <!--<![endif]-->
+                                                                                    <img class="emailnomob" border="0" style="width:174px;display:block; border-style:none; min-width:174px;" src="https://i.imgur.com/zbvTeeY.png" alt="NAB Property" />
+                                                                                </td>
+                                                                            </tr>
+                                                                            <!-- Divider starts-->
+                                                                            <tr>
+                                                                                <td height="85" class="height55" valign="middle">
+                                                                                    <hr style="margin:0; background:none; color:#b5bdc1 ; border:none; border-top:1px solid #b5bdc1;">
+                                                                                </td>
+                                                                            </tr>
+                                                                            <!-- Divider ends-->
+                                                                            <tr>
+                                                                                <td class="font-size-16" align="left" valign="top" style="font-size: 18px; font-weight: bold; padding-bottom: 19px;">
+                                                                                    Unlock your home loan potential with NAB Homekey
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="font-size-16" align="left" valign="top" style="font-size: 18px; font-weight: normal; padding-bottom: 16px;line-height:27px;">
+                                                                                    At NAB, we understand that life is full of change, complexity and unexpected challenges. That's why we're here to support you over the life of your home ownership journey by providing you with innovative tools, calculators and guidance from our home loan
+                                                                                    specialists.
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="font-size-16" align="left" valign="top" style="font-size: 18px; font-weight: normal; padding-bottom: 16px;line-height:27px;">
+                                                                                    <a href="https://www.nab.com.au/unsubscribe" style="color:#c20000; text-decoration: none;border-bottom: 1px solid #c20000;">Visit NAB Homekey</a> to help you take the
+                                                                                    next step on your property journey.
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="font-size-16" align="left" valign="top" style="font-size: 18px; font-weight: normal; padding-bottom: 16px;line-height:27px;">
+                                                                                    Already have a NAB Home Loan? Ask for a check in.
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="font-size-16" align="left" valign="top" style="font-size: 18px; font-weight: normal; padding-bottom: 16px;line-height:27px;">
+                                                                                    A NAB Home Loan Check In can help you unlock the potential of your home loan. Your check in will be tailored specially to you and your situation.
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="font-size-16" align="left" valign="top" style="font-size: 18px; font-weight: normal;line-height:27px;">
+                                                                                    Find out more about the <a href="https://www.nab.com.au/unsubscribe" style="color:#c20000; text-decoration: none;border-bottom: 1px solid #c20000;">NAB Home Loan Check In</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <!-- Divider starts-->
+                                                                            <tr>
+                                                                                <td height="85" class="height55" valign="middle">
+                                                                                    <hr style="margin:0; background:none; color:#b5bdc1 ; border:none; border-top:1px solid #b5bdc1;">
+                                                                                </td>
+                                                                            </tr>
+                                                                            <!-- Divider ends-->
+                                                                            <tr>
+                                                                                <td class="font-size-16" align="left" valign="top" style="font-size: 18px; font-weight: bold; padding-bottom: 21px;">
+                                                                                    We’re here to help
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="font-size-16" align="left" valign="top" style="font-size: 18px; font-weight: normal; padding-bottom: 18px;line-height:27px;">
+                                                                                    If you've got any questions, our home loan experts are ready to help. Feel free to give us a call on 13 40 83 or request a call back.
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="font-size-16" align="left" valign="top" style="font-size: 18px; font-weight: normal; padding-bottom: 22px;">
+                                                                                    Thanks,
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="font-size-16" align="left" valign="top" style="font-size: 18px; font-weight: normal;">
+                                                                                    NAB
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- Row 2.2 Ends Heroimage -->
+                                                            <!-- ***************** -->
+                                                            <!-- Row 2.3 Starts Content-->
+                                                            <tr>
+                                                                <td class="padding-mobile" align="left" valign="top" style="background-color:#282b2e; color:#ffffff;padding:27px 84px 27px 60px;">
+                                                                    <table width="456" align="left" class="makeFluid" style="width:456px; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" border="0" cellspacing="0" cellpadding="0">
+                                                                        <tr>
+                                                                            <td>
+                                                                                <table width="266" align="left" class="makeFluid" style="width:266px; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" border="0" cellspacing="0" cellpadding="0">
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <td class="bottom-pad-25 stack-column-center" align="left" valign="top" style=" color:#ffffff;font-size: 18px; font-weight: bold;">
+                                                                                                Already a NAB customer?
+                                                                                                <br/>
+                                                                                                <span style="font-weight: normal;color:#ffffff;">Apply for conditional approval.</span>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                                <table width="150" align="right" class="makeFluid" style="width:150px; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" border="0" cellspacing="0" cellpadding="0">
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <td class="stack-column-center" align="right" valign="top">
+                                                                                                <!--[if !mso 9]><!-->
+                                                                                                <div class="gmail" style="display: none; width: 0; overflow: hidden;  max-height: 0; mso-hide:all;">
+                                                                                                    <img border="0" src="https://i.imgur.com/Wr6hFUa.png" alt="" style="width:280px;display: block; border: none;" />
+                                                                                                </div>
+                                                                                                <!--<![endif]-->
+                                                                                                <img class="emailnomob" border="0" style="width:147px;display:block; border-style:none; min-width:147px;" src="https://i.imgur.com/5lKJXPo.png" alt="" />
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+
+
+                                                                </td>
+                                                            </tr>
+                                                            <!-- Row 2.3 Ends Heroimage -->
+                                                            <!-- ***************** -->
+                                                            <!-- Row 2.4 Starts Content-->
+                                                            <tr>
+                                                                <td align="center" class="black-strip-mob-padding" valign="middle" bgcolor="#000000" style="background-color:#000000;font-size: 14px;padding: 18px 105px 18px 108px;">
+                                                                    <table width="387" class="makeFluid" style="width:387px;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" border="0" cellspacing="0" cellpadding="0">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td width="60%" class="width50pc" align="left" valign="top" style="width:60%;color:#ffffff;">
+                                                                                    <table align="left" class="makeFluid" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" border="0" cellspacing="0" cellpadding="0">
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <td align="center" valign="top" class="nopadding bottom-pad-10" style="padding: 0 15px 0 0;">
+                                                                                                    <!--[if !mso 9]><!-->
+                                                                                                    <div class="gmail" style="display: none; width: 0; overflow: hidden;  max-height: 0; mso-hide:all;">
+                                                                                                        <img border="0" src="https://imgur.com/bJZViOl.png" alt="Mobile" style="width:21px;display: block; border: none;" />
+                                                                                                    </div>
+                                                                                                    <!--<![endif]-->
+                                                                                                    <img class="emailnomob" border="0" style="width:21px;display:block; border-style:none; min-width:21px;" src="https://imgur.com/bJZViOl.png" alt="Mobile" />
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                    <table align="left" class="makeFluid" style=" border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" border="0" cellspacing="0" cellpadding="0">
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <td align="left" valign="top" class="text-align-center" style="text-align: left;color: #ffffff;">Call us<br/>13&nbsp;37&nbsp;68&nbsp;</td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </td>
+                                                                                <td width="40%" class="width50pc" align="left" valign="top" style="width:40%;color:#ffffff;">
+                                                                                    <table align="left" class="makeFluid" style=" border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" border="0" cellspacing="0" cellpadding="0">
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <td align="center" valign="top" class="nopadding bottom-pad-10" style="padding: 0 15px 0 0;">
+                                                                                                    <!--[if !mso 9]><!-->
+                                                                                                    <div class="gmail" style="display: none; width: 0; overflow: hidden;  max-height: 0; mso-hide:all;">
+                                                                                                        <img border="0" src="https://imgur.com/UAjRojy.png" alt="Door" style="width:22px;display: block; border: none;" />
+                                                                                                    </div>
+                                                                                                    <!--<![endif]-->
+                                                                                                    <img class="emailnomob" border="0" style="width:22px;display:block; border-style:none; min-width:22px;" src="https://imgur.com/UAjRojy.png" alt="Door" />
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                    <table align="left" class="makeFluid" style=" border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" border="0" cellspacing="0" cellpadding="0">
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <td align="left" valign="top" class="text-align-center" style="text-align: left;color: #ffffff;">Visit us today&nbsp;<br/><a href="#" style="color: #d20000; text-decoration: none;border-bottom:1px solid #d20000;">Locate a branch</a></td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- Row 2.4 Ends Heroimage -->
+                                                            <!-- ***************** -->
+                                                            <!-- Row 2.5 Starts Content-->
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <!-- Row 2 ends -->
+                                            <!-- ************************************** -->
+                                            <!-- Row 3 Starts Footer -->
+                                            <tr>
+                                                <td align="left" valign="top" class="footer" style="padding: 50px 0px 0 0; font-family:Arial, Helvetica, sans-serif; font-size: 12px;color: #333333;">
+                                                    <table class="makeFluid" style=" border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" border="0" cellspacing="0" cellpadding="0">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td align="left" valign="top" style="line-height: 20px;padding-bottom: 20px; font-family: Arial, Helvetica, sans-serif;">
+                                                                    <span style="font-weight:bold;">Important Information</span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="left" valign="top" style="line-height: 20px;padding-bottom: 20px; font-family: Arial, Helvetica, sans-serif;">
+                                                                    NAB will never request personal information such as your PIN/password or ask you to login to online services directly from an email. For more security advice, visit <a href="https://www.nab.com.au/security"
+                                                                        style="color:#c20000; text-decoration: none; border-bottom: 1px solid #c20000;">nab.com.au/security</a>.
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="left" valign="top" style="line-height: 20px;padding-bottom: 20px; font-family: Arial, Helvetica, sans-serif;">
+                                                                    This email was sent to XXXXXX@XXX.com. Please do not respond to this email as this mailbox is not monitored and you will not receive a response.
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="left" valign="top" style="line-height: 20px;padding-bottom: 20px; font-family: Arial, Helvetica, sans-serif;">
+                                                                    You can unsubscribe from marketing emails from NAB at <a href="https://www.nab.com.au/unsubscribe" style="color:#c20000; text-decoration: none;border-bottom: 1px solid #c20000;">nab.com.au/unsubscribe</a>.
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="left" valign="top" style="line-height: 20px;padding-bottom: 20px; font-family: Arial, Helvetica, sans-serif;">
+                                                                    &copy; 2017 National Australia Bank Limited ABN 12 004 044 937 AFSL and Australian Credit Licence 230686.
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <!-- Row 3 ends Footer-->
+                                            <!-- ************************************** -->
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- Inner table ends -->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- Wrapper table ends -->
+</body>
+
+</html>
