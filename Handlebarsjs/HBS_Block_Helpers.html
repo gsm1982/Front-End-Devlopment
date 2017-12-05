@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Handlebrs - Templating</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="./handlebars-v4.0.11.js"></script>
+  </head>
+  <body>
+    <div id="contentDiv"></div>
+
+    <script id="the-template" type="type/x-handlebars-template">
+      {{#makeRadioBtns "size"}}
+        Small
+        Medium
+        Large
+      {{/makeRadioBtns}}
+
+      {{#areEquals 1 1}}
+          Numbers are Equal
+        {{else}}
+          Numbers are not Equal
+      {{/areEquals}}
+
+      {{#if "isActive"}}
+        <img src="https://i.imgur.com/SYAGmDp.jpg" alt="320x400">
+      {{else}}
+        <img src="https://i.imgur.com/C9kdW9z.jpg" alt="600x400">
+      {{/if}}
+    </script>
+
+    <script type="text/javascript">
+      var templateInfo = document.getElementById('the-template').innerHTML;
+      var template = Handlebars.compile(templateInfo);
+
+      Handlebars.registerHelper("makeRadioBtns", function(name, options){
+        var radioList = options.fn();
+        radioList = radioList.trim().split('\n');
+
+        var output = "";
+        for(var val in radioList){
+          var item = radioList[val].trim();
+          output += '<input type="radio" name="' + name + '"value="' + item + '">' + item + '<br/>';
+        }
+
+        return output;
+      });
+
+      Handlebars.registerHelper("areEquals", function(num1, num2, options){
+        if(num1 === num2)
+        {
+          return options.fn(this);
+        }
+        else{
+          return options.inverse(this);
+        }
+      });
+
+      Handlebars.registerHelper("if", function(data, options){
+        if(data === "isActive"){
+          return options.fn(this);
+        }
+        else {
+          return options.inverse(this);
+        }
+      });
+
+      var templateData = template({});
+      document.getElementById('contentDiv').innerHTML += templateData;
+    
+    </script>
+    
+  </body>
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html PUBLIC"-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <!--[if gte mso 9]><xml>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+  <o:PixelsPerInch>96</o:PixelsPerInch>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A Simple Responsive HTML Email</title>
+    <style type="text/css">
+        /* General Classes for cross Email client rendering ease.*/
+        
+        #outlook a {
+            padding: 0;
+            text-decoration: none;
+        }
+        
+        body {
+            width: 100% !important;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            margin: 0;
+            padding: 0;
+            mso-line-height-rule: exactly;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        @media only screen and (max-width: 600px) {
+            table[class=emailnomob],
+            td[class=emailnomob],
+            img[class=emailnomob],
+            span[class=emailnomob],
+            br[class=emailnomob],
+            a[class=emailnomob] {
+                display: none !important;
+            }
+            table[class=makeFluid],
+            td[class=makeFluid],
+            img[class=makeFluid],
+            a[class=makeFluid] {
+                width: 100% !important;
+                height: auto !important;
+            }
+            *[class=gmail] {
+                display: block!important;
+                width: auto!important;
+                overflow: visible!important;
+                float: none !important;
+                height: inherit!important;
+                max-height: inherit!important;
+            }
+            table[class=innerWrapper] {
+                width: 320px !important;
+                margin: 0 !important;
+                min-width: 320px !important;
+            }
+            td[class=nopadding],
+            table[class=nopadding],
+            span[class=nopadding] {
+                padding: 0 !important;
+            }
+            td[class=copy-padding] {
+                padding: 30px 20px 30px 20px !important;
+            }
+            td[class=greetings] {
+                font-size: 24px;
+                font-weight: bold;
+                color: #c20000;
+            }
+            td[class=company-name] {
+                font-size: 16px;
+                font-weight: bold;
+                color: #000000;
+                line-height: 27px;
+            }
+            td[class=company-copy1] {
+                font-size: 16px;
+                font-weight: normal;
+                color: #000000;
+                line-height: 27px;
+                padding: 0 0 40px 0 !important;
+            }
+            td[class=company-copy2] {
+                font-size: 16px;
+                font-weight: normal;
+                color: #000000;
+                line-height: 27px;
+                padding: 0 0 50px 0 !important;
+            }
+            td[class=redeem-how-copy] {
+                font-size: 24px;
+                font-weight: bold;
+                color: #c20000;
+                line-height: 32px;
+                padding: 0 0 30px 0 !important;
+            }
+            td[class=bullets-table] {
+                padding: 0 0 32px 0 !important;
+                font-size: 16px;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            td[class=bullet-bold] {
+                font-weight: bold;
+                padding: 0 5px 0 0 !important;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            td[class=redeem-btn] {
+                padding: 0 0 50px 0 !important;
+            }
+            td[class=divider] {
+                padding: 0 0 50px 0 !important;
+            }
+            td[class=any-copy] {
+                padding: 0 0 30px 0 !important;
+                font-size: 18px;
+            }
+            td[class=help-copy] {
+                font-size: 16px;
+                line-height: 27px;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            td[class=black-strip] {
+                padding: 27px 0 19px 0 !important;
+                font-size: 14px;
+            }
+            td[class=contact] {
+                padding: 0 0 0 0 !important;
+                /* color: #ffffff !important; */
+            }
+            td[class=footer] {
+                background-color: #eff1f3 !important;
+                font-size: 12px;
+                color: #333333;
+                padding: 30px 24px 0 19px!important;
+            }
+            td[class=stackCol] {
+                display: block !important;
+            }
+            td[class=copy-center] {
+                text-align: center;
+                color: #ffffff !important;
+            }
+        }
+    </style>
+</head>
+
+<body yahoo style="padding:0px; margin:0;-webkit-text-size-adjust:none; background-color:#eff1f3;">
+    <!-- Wrapper table begins -->
+    <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0" style="background-color:#eff1f3;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+        <tbody>
+            <tr>
+                <td align="center" valign="top">
+                    <!-- Inner table begins -->
+                    <table width="600" style="min-width:600px; background-color:#ffffff; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" border="0" cellspacing="0" cellpadding="0" class="innerWrapper">
+                        <tbody>
+                            <tr>
+                                <td align="center" valign="top">
+                                    <table style="width:100%; background-color:#ffffff;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" border="0" cellspacing="0" cellpadding="0">
+                                        <tbody>
+                                            <!-- Row 1 Starts -->
+                                            <tr>
+                                                <td bgcolor="#eff1f3" class="header" align="center" valign="top" style="padding: 24px 0 26px 0; font-family:Arial, Helvetica, sans-serif; font-size: 12px; background-color:#eff1f3;">
+                                                    Having trouble viewing this email? <a href="#" style="color: #dd2200;">View online</a>
+                                                </td>
+                                            </tr>
+                                            <!-- Row 1 ends -->
+                                            <!-- ************************************** -->
+                                            <!-- Row 2 Starts -->
+                                            <tr>
+                                                <td align="center" valign="top">
+                                                    <!--[if !mso 9]><!-->
+                                                    <div class="gmail" style="display: none; width: 0; overflow: hidden;  max-height: 0; mso-hide:all;">
+                                                        <img height="1" border="0" src="https://imgur.com/d2f05vY.png" alt="Qantas" class="makeFluid" style="width:1px;display: block; border: none;color:#004977;" />
+                                                    </div>
+                                                    <!--<![endif]-->
+                                                    <img class="emailnomob" border="0" style="width:600px;display:block; border-style:none; min-width:600px;" src="https://imgur.com/T4iyKjI.png" alt="Qantas" />
+                                                </td>
+                                            </tr>
+                                            <!-- Row 2 ends -->
+                                            <!-- ************************************** -->
+                                            <!-- Row 3 Starts -->
+                                            <tr>
+                                                <td align="left" valign="top">
+                                                    <table border="0" cellspacing="0" cellpadding="0" style="width:100%;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td align="left" valign="top" class="copy-padding" style="padding: 50px 60px 50px 60px;">
+                                                                    <table class="makefluid" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;width:100%;" align="left" border="0" cellspacing="0" cellpadding="0">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td align="left" class="greetings" valign="top" style="font-size: 24px; font-weight: bold; color: #c20000; padding: 0 0 30px 0;">Thank You</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td align="left" class="company-name" valign="top" style="font-size: 16px;font-weight: bold;color: #000000;line-height: 27px;padding: 0 0 30px 0;">&lt;Company name&gt;,</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td align="left" class="company-copy1" valign="top" style="font-size: 16px;font-weight: normal;color: #000000;line-height: 27px;padding: 0 0 30px 0;">
+                                                                                    Your NAB Qantas Business MasterCard&reg; credit card facility has now been switched to a NAB Qantas Business Signature Visa credit card facility with account number ending in &lt;4digits&gt. We appreciate your support during this time.
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td align="left" class="company-copy2" valign="top" style="font-size: 16px;font-weight: normal;color: #000000;line-height: 27px;padding: 0 0 30px 0;">
+                                                                                    We’d like to say thanks, by giving you &lt;points value&gt; bonus Qantas Points. If you have not done it yet, follow the steps below before <span style="font-weight:bold;">31 October 2017</span>                                                                                    to redeem your bonus points.
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td align="left" class="redeem-how-copy" valign="top" style="font-size: 24px;font-weight: bold;color: #c20000;line-height: 32px;padding: 0 0 30px 0;">
+                                                                                    How to redeem
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td align="left" class="bullets-table" valign="top" style="padding: 0 0 28px 0;font-size: 16px;font-family: Arial, Helvetica, sans-serif;">
+                                                                                    <table class="makeFluid" style="table-layout: fixed; line-height: 27px; background-color:#ffffff;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" border="0" cellspacing="0" cellpadding="0">
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <td align="left" class="bullet-bold" valign="top" style="width:19px;font-weight: bold;padding: 0 5px 0 0;font-family: Arial, Helvetica, sans-serif;">
+                                                                                                    1.
+                                                                                                </td>
+                                                                                                <td align="left" valign="top">
+                                                                                                    Click on the <span style="font-weight:bold;">&#8216;redeem&#8217;</span> button to activate your reward.
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td align="left" class="bullet-bold" valign="top" style="width:19px;font-weight: bold; padding: 0 5px 0 0; font-family: Arial, Helvetica, sans-serif;">
+                                                                                                    2.
+                                                                                                </td>
+                                                                                                <td align="left" valign="top">
+                                                                                                    Enter your unique code <span style="font-weight:bold;">&lt;ABC123&gt;</span>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td align="left" class="bullet-bold" valign="top" style="width:19px;font-weight: bold; padding: 0 5px 0 0; font-family: Arial, Helvetica, sans-serif;">
+                                                                                                    3.
+                                                                                                </td>
+                                                                                                <td align="left" valign="top">
+                                                                                                    Enter the last <span style="font-weight:bold;">4 digits</span> of the <span style="font-weight:bold;">new Visa</span> card you would like the bonus points
+                                                                                                    credited to. We’ll credit the points to the Nominated Points Earner’s Qantas Frequent Flyer account.
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td align="left" class="bullet-bold" valign="top" style="width:19px;font-weight: bold; padding: 0 5px 0 0; font-family: Arial, Helvetica, sans-serif;">
+                                                                                                    4.
+                                                                                                </td>
+                                                                                                <td align="left" valign="top">
+                                                                                                    Submit the form.
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td align="left" valign="top" class="redeem-btn" style="padding: 0 0 30px 0;">
+                                                                                    <!--[if !mso 9]><!-->
+                                                                                    <div class="gmail" style="display: none; width: 0; overflow: hidden;  max-height: 0; mso-hide:all;">
+                                                                                        <img height="1" border="0" src="https://imgur.com/T3B2Gwv.png" alt="Redeem" class="makeFluid" style="width:1px;display: block; border: none;color:#004977;" />
+                                                                                    </div>
+                                                                                    <!--<![endif]-->
+                                                                                    <img class="emailnomob" border="0" style="width:99px;display:block; border-style:none; min-width:99px;" src="https://imgur.com/pP9rABI.png" alt="Redeem" />
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td align="center" valign="top" class="divider" style="padding: 0 0 30px 0;">
+                                                                                    <!--[if !mso 9]><!-->
+                                                                                    <div class="gmail" style="display: none; width: 0; overflow: hidden;  max-height: 0; mso-hide:all;">
+                                                                                        <img height="1" border="0" src="https://imgur.com/FRpPsaC.png" alt="" class="makeFluid" style="width:1px;display: block; border: none;color:#004977;" />
+                                                                                    </div>
+                                                                                    <!--<![endif]-->
+                                                                                    <img class="emailnomob" border="0" style="width:481px;display:block; border-style:none; min-width:481px;" src="https://imgur.com/EmDWhly.png" alt="" />
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td align="left" class="any-copy" valign="top" style="padding: 0 0 30px 0; font-size: 18px; font-weight:bold;">Any Questions?
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td align="left" class="help-copy" valign="top" style="font-size: 16px;line-height: 27px;font-family: Arial, Helvetica, sans-serif;">
+                                                                                    Call our dedicated Visa Switch team on <span style="font-family: Arial, Helvetica, sans-serif;font-weight:bold;">13 37 68</span> or visit <a href="#" style="color: #c20000">nab.com.au/mynewvisabusiness</a>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <!-- Row 3 ends -->
+                                            <!-- ************************************** -->
+                                            <!-- Row 4 Starts -->
+                                            <tr>
+                                                <td align="left" bgcolor="#000000" class="black-strip" valign="middle" style="font-size: 14px;" height="75">
+                                                    <table class="makeFluid" style=" border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; " border="0 " cellspacing="0 " cellpadding="0 ">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td align="center" width="288" valign="top ">
+                                                                    <table class="makeFluid " style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; " border="0 " cellspacing="0 " cellpadding="0 ">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td align="center" class="stackCol" valign="top">
+                                                                                    <table class="makeFluid " style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; " border="0 " cellspacing="0 " cellpadding="0 ">
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <td align="center" valign="top" class="contact" style="padding: 0 15px 0 0;">
+                                                                                                    <!--[if !mso 9]><!-->
+                                                                                                    <div class="gmail" style="display: none; width: 0; overflow: hidden;  max-height: 0; mso-hide:all;">
+                                                                                                        <img height="1" border="0" src="https://imgur.com/J6Z9HGu.png" alt="Mobile" class="makeFluid" style="width:1px;display: block; border: none;color:#004977;" />
+                                                                                                    </div>
+                                                                                                    <!--<![endif]-->
+                                                                                                    <img class="emailnomob" border="0" style="width:21px;display:block; border-style:none; min-width:21px;" src="https://imgur.com/J6Z9HGu.png" alt="Mobile" />
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </td>
+                                                                                <td align="center" class="stackCol" valign="top">
+                                                                                    <table class="makeFluid " style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; " border="0 " cellspacing="0 " cellpadding="0 ">
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <td align="left" valign="top " class="copy-center" style="color: #ffffff;">Call us<br/>13&nbsp;37&nbsp;68&nbsp;</td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                                <td align="center" width="288" valign="top">
+                                                                    <table class="makeFluid " style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; " border="0 " cellspacing="0 " cellpadding="0 ">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td align="center" class="stackCol" valign="top ">
+                                                                                    <table class="makeFluid " style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; " border="0 " cellspacing="0 " cellpadding="0 ">
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <td align="center" valign="top" class="contact" style="padding: 0 15px 0 0;">
+                                                                                                    <!--[if !mso 9]><!-->
+                                                                                                    <div class="gmail" style="display: none; width: 0; overflow: hidden;  max-height: 0; mso-hide:all;">
+                                                                                                        <img height="1" border="0" src="https://imgur.com/Nr8NopE.png" alt="Door" class="makeFluid" style="width:1px;display: block; border: none;color:#004977;" />
+                                                                                                    </div>
+                                                                                                    <!--<![endif]-->
+                                                                                                    <img class="emailnomob" border="0" style="width:22px;display:block; border-style:none; min-width:22px;" src="https://imgur.com/Nr8NopE.png" alt="Door" />
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </td>
+                                                                                <td align="center" class="stackCol" valign="top ">
+                                                                                    <table class="makeFluid " style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; " border="0 " cellspacing="0 " cellpadding="0 ">
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <td align="left" valign="top " class="copy-center" style="color: #ffffff;">Visit us today&nbsp;<br/><a href="# " style="color: #d20000 ">Locate a branch</a></td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <!-- Row 4 ends -->
+                                            <!-- ************************************** -->
+                                            <!-- Row 5 Starts -->
+                                            <tr>
+                                                <td bgcolor="#eff1f3" align="left" valign="top " class="footer" style="padding: 50px 37px 0 0; font-family:Arial, Helvetica, sans-serif; font-size: 12px;color: #333333;">
+                                                    <table class="makeFluid " style=" border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; " border="0 " cellspacing="0 " cellpadding="0 ">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td align="left" valign="top " style="line-height: 20px;padding-bottom: 20px; font-family: Arial, Helvetica, sans-serif;">
+                                                                    <span style="font-weight:bold; ">Important Information</span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="left" valign="top " style="line-height: 20px;padding-bottom: 20px; font-family: Arial, Helvetica, sans-serif;">
+                                                                    NAB will never request personal information such as your PIN/password or ask you to login to online services directly from an email. For more security advice, visit <a href="#
+                                                        " style="color:#c20000 ">nab.com.au/security</a>.
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="left" valign="top " style="line-height: 20px;padding-bottom: 20px; font-family: Arial, Helvetica, sans-serif;">
+                                                                    This email was sent to xxxxxx. Please do not respond to this email as this mailbox is not monitored and you will not receive a response.
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="left" valign="top " style="line-height: 20px;padding-bottom: 20px; font-family: Arial, Helvetica, sans-serif;">
+                                                                    &copy; 2017 National Australia Bank Limited ABN 12&nbsp;004&nbsp;044&nbsp;937 AFSL and Australian Credit License 230686.
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <!-- Row 5 ends -->
+                                            <!-- ************************************** -->
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- Inner table ends -->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- Wrapper table ends -->
+</body>
+
+</html>

@@ -1,0 +1,532 @@
+<!DOCTYPE html PUBLIC"-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+    <!--[if gte mso 9]><xml>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+  <o:PixelsPerInch>96</o:PixelsPerInch>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A Simple Responsive HTML Emailer 06</title>
+    <style type="text/css">
+        /* General Classes for cross Email client rendering ease.*/
+        
+        a {
+            padding: 0;
+            text-decoration: none;
+        }
+        
+        body {
+            width: 100% !important;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            margin: 0;
+            padding: 0;
+            mso-line-height-rule: exactly;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #eff1f3;
+        }
+        
+        @media only screen and (max-width: 600px) {
+            .emailnomob {
+                display: none !important;
+            }
+            .emailnodesk {
+                display: none !important;
+            }
+            .makeFluid {
+                width: 100% !important;
+                height: auto !important;
+            }
+            a[x-apple-data-detectors] {
+                color: inherit !important;
+                text-decoration: none !important;
+                font-size: inherit !important;
+                font-family: inherit !important;
+                font-weight: inherit !important;
+                line-height: inherit !important;
+            }
+            .gmail {
+                display: block!important;
+                width: auto!important;
+                overflow: visible!important;
+                float: none !important;
+                height: inherit!important;
+                max-height: inherit!important;
+            }
+            .header {
+                padding: 10px 10px 10px 0px !important;
+            }
+            .innerWrapper {
+                width: 320px !important;
+                margin: 0 !important;
+                min-width: 320px !important;
+            }
+            .nopadding {
+                padding: 0 !important;
+            }
+            .left-right-pad-8 {
+                padding-left: 8px !important;
+                padding-right: 8px !important;
+            }
+            .font-size-12 {
+                font-size: 12px !important;
+            }
+            .font-size-13 {
+                font-size: 13px !important;
+            }
+            .font-size-16 {
+                font-size: 16px !important;
+            }
+            .font-size-24 {
+                font-size: 24px !important;
+            }
+            .table-header {
+                padding: 16px 11px 16px 11px !important;
+            }
+            .table-row-padding {
+                padding: 15px 15px 15px 11px !important;
+            }
+            .table-row-width {
+                width: 190px !important;
+            }
+            .table-content-bottom-pad {
+                padding-bottom: 40px !important;
+            }
+            .padding-mobile {
+                padding: 40px 19px 40px 19px !important;
+            }
+            .padding-line {
+                padding: 50px 19px 46px 19px !important;
+            }
+            .no-top-pad {
+                padding-top: 0 !important;
+            }
+            .no-bottom-pad {
+                padding-bottom: 0px !important;
+            }
+            .bottom-pad-8 {
+                padding-bottom: 8px !important;
+            }
+            .bottom-pad-10 {
+                padding-bottom: 10px !important;
+            }
+            .bottom-pad-17 {
+                padding-bottom: 17px !important;
+            }
+            .bottom-pad-20 {
+                padding-bottom: 20px !important;
+            }
+            .bottom-pad-25 {
+                padding-bottom: 25px !important;
+            }
+            .bottom-pad-35 {
+                padding-bottom: 40px !important;
+            }
+            .bottom-pad-40 {
+                padding-bottom: 40px !important;
+            }
+            .bottom-pad-55 {
+                padding-bottom: 55px !important;
+            }
+            .no-line-height {
+                line-height: 0px !important;
+            }
+            .no-left-pad {
+                padding-left: 0px !important;
+            }
+            .no-right-pad {
+                padding-right: 0px !important;
+            }
+            .line-height-28 {
+                line-height: 28px !important;
+            }
+            .line-height-29 {
+                line-height: 29px !important;
+            }
+            .bg-color {
+                background-color: #f1f2f6 !important;
+            }
+            .bottom-pad-77 {
+                padding-bottom: 77px !important;
+            }
+            .black-strip {
+                padding: 27px 0 19px 0 !important;
+                font-size: 14px;
+            }
+            .stackCol {
+                display: block !important;
+            }
+            .padding-divider {
+                padding: 0px 0 30px 0 !important;
+            }
+            .height55 {
+                height: 55px !important;
+            }
+            .black-strip-mob-padding {
+                padding: 18px 10px 18px 10px !important;
+            }
+            .width50pc {
+                width: 50% !important;
+            }
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            .stack-column {
+                text-align: left !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+            .footer {
+                padding: 30px 24px 0 19px!important;
+            }
+            .text-align-center {
+                text-align: center !important;
+            }
+        }
+    </style>
+</head>
+
+<body style="padding:0px; margin:0;-webkit-text-size-adjust:none; background-color:#eff1f3;">
+    <!-- Wrapper table begins -->
+    <table width="100%" bgcolor="#eff1f3" align="center" border="0" cellspacing="0" cellpadding="0" style="background-color:#eff1f3;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+        <tbody>
+            <tr>
+                <td align="center" valign="top">
+                    <!-- Inner table begins -->
+                    <table width="600" style="width:600px; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" border="0" cellspacing="0" cellpadding="0" class="innerWrapper">
+                        <tbody>
+                            <tr>
+                                <td align="center" valign="top">
+                                    <table style="width:100%; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" border="0" cellspacing="0" cellpadding="0">
+                                        <tbody>
+                                            <!-- Row 1 Starts Header -->
+                                            <tr>
+                                                <td class="header" align="center" valign="top" style="padding: 24px 0 26px 0; font-family:Arial, Helvetica, sans-serif; font-size: 12px;">
+                                                    Having trouble viewing this email? <a href="https://www.nab.com.au" style="color:#c20000; text-decoration: none;border-bottom: 1px solid #c20000;">View online</a>
+                                                </td>
+                                            </tr>
+                                            <!-- Row 1 ends Header-->
+                                            <!-- ************************************** -->
+                                            <!-- Row 2 Starts -->
+                                            <tr>
+                                                <td align="center" valign="top">
+                                                    <table style="background-color:#ffffff;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" border="0" cellspacing="0" cellpadding="0">
+                                                        <tbody>
+                                                            <!-- Row 2.1 Starts Heroimage-->
+                                                            <tr>
+                                                                <td align="center" valign="top">
+                                                                    <!--[if !mso 9]><!-->
+                                                                    <div class="gmail" style="display: none; width: 0; overflow: hidden;  max-height: 0; mso-hide:all;">
+                                                                        <img height="1" border="0" src="https://i.imgur.com/mJsgU7K.png" alt="NAB New VISA credit card" class="makeFluid" style="width:1px;display: block; border: none;" />
+                                                                    </div>
+                                                                    <!--<![endif]-->
+                                                                    <img class="emailnomob" border="0" style="width:600px;display:block; border-style:none; min-width:600px;" src="https://i.imgur.com/xZ2V3Hq.png" alt="NAB New VISA credit card" />
+                                                                </td>
+                                                            </tr>
+                                                            <!-- Row 2.1 Ends Heroimage -->
+                                                            <!-- ***************** -->
+                                                            <!-- Row 2.2 Starts -->
+                                                            <tr>
+                                                                <td align="left" valign="top" class="padding-mobile" style="padding: 35px 60px 31px 60px;">
+                                                                    <table>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td align="left" valign="top" style="color:#000000;font-size: 16px; font-family:Arial, Helvetica, sans-serif;font-weight: bold;line-height:24px;padding-bottom:6px;">Hi &lt;First name&gt;,</td>
+                                                                            </tr>
+
+                                                                            <tr>
+                                                                                <td align="left" valign="top" style="color:#000000;font-size: 16px; font-family:Arial, Helvetica, sans-serif;font-weight: normal; line-height:24px;padding-bottom:6px;">It’s great to see you’re putting your new NAB &lt;product&gt; Visa credit card to good use.</td>
+                                                                            </tr>
+
+                                                                            <tr>
+                                                                                <td align="left" valign="top" style="color:#000000;font-size: 16px; font-family:Arial, Helvetica, sans-serif;font-weight: normal;line-height:24px;padding-bottom:6px;">
+                                                                                    And now that you’ve made the switch, don’t forget to also update any direct debits, transfers and automated payments still connected to your old MasterCard. We know it can take a little time to get these sorted, so for a helpful checklist and to find
+                                                                                    out more about your new Visa card, visit <a href="nab.com.au/mynewvisa" style="font-weight:bold; color:#000000;text-decoration:none;">nab.com.au/mynewvisa</a>
+                                                                                </td>
+                                                                            </tr>
+
+                                                                            <tr>
+                                                                                <td align="left" valign="top" style="color:#000000;font-size: 16px; font-family:Arial, Helvetica, sans-serif;font-weight: normal;line-height:24px;">Plus, we have even more ways you can make the most out of your new Visa card.</td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- Row 2.2 Ends -->
+                                                            <!-- ********************* -->
+                                                            <!-- Row 2.3 Starts -->
+                                                            <tr>
+                                                                <td class="padding-mobile" align="left" valign="top" style="background-color:#c20000; color:#ffffff;padding:34px 20px 37px 50px;">
+                                                                    <table width="530" align="left" class="makeFluid" style="width:530px; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" border="0" cellspacing="0" cellpadding="0">
+                                                                        <tr>
+                                                                            <td align="left" valign="top" class="nopadding" style="padding: 0 10px 0 10px;">
+                                                                                <table width="250" align="right" class="makeFluid" style="width:250px; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" border="0" cellspacing="0" cellpadding="0">
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <td class="bottom-pad-25 stack-column-center" align="right" valign="top">
+                                                                                                <!--[if !mso 9]><!-->
+                                                                                                <div class="gmail" style="display: none; width: 0; overflow: hidden;  max-height: 0; mso-hide:all;">
+                                                                                                    <img border="0" src="https://i.imgur.com/ZE1pAIN.png" alt="" style="width:244px;display: block; border: none;" />
+                                                                                                </div>
+                                                                                                <!--<![endif]-->
+                                                                                                <img class="emailnomob" border="0" style="width:242px;display:block; border-style:none; min-width:242px;" src="https://i.imgur.com/bM2aoDL.png" alt="" />
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                                <table width="220" align="left" class="makeFluid" style="width:220px; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" border="0" cellspacing="0" cellpadding="0">
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <td class="bottom-pad-25 stack-column" align="left" valign="top" style="padding-bottom:20px; color:#ffffff;font-size: 25px; font-family:Arial, Helvetica, sans-serif;font-weight: bold;line-height:32px;">
+                                                                                                Get XXXX bonus Qantas points
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="bottom-pad-25 stack-column" align="left" valign="top" style="padding-bottom:28px; color:#ffffff;font-size: 16px; font-family:Arial, Helvetica, sans-serif;font-weight: normal;line-height:24px;">
+                                                                                                It's easy to get bonus points just for making everyday purchases. Simply spend $xxxx or more using your NAB &lt;product name&gt; Visa Credit card from &lt;date month year&gt; to &lt;date month year&gt;, and get xxxx bonus Qantas points.
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="stack-column-center" align="left" valign="top">
+                                                                                                <!--[if !mso 9]><!-->
+                                                                                                <div class="gmail" style="display: none; width: 0; overflow: hidden;  max-height: 0; mso-hide:all;">
+                                                                                                    <img border="0" src="https://i.imgur.com/yQzB6rD.png" alt="" style="width:280px;display: block; border: none;" />
+                                                                                                </div>
+                                                                                                <!--<![endif]-->
+                                                                                                <img class="emailnomob" border="0" style="width:162px;display:block; border-style:none; min-width:162px;" src="https://i.imgur.com/Zzf8nkL.png" alt="" />
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- Row 2.3 Ends Heroimage -->
+                                                            <!-- ********************** -->
+                                                            <!-- Row 2.4 Starts -->
+                                                            <tr>
+                                                                <td class="padding-mobile no-bottom-pad" height="400" align="center" valign="top" style="background-color:#ffffff; color:#000000;padding:34px 50px 0px 50px;height:400px;">
+                                                                    <table width="500" align="left" class="makeFluid" style="width:500px; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" border="0" cellspacing="0" cellpadding="0">
+                                                                        <tr>
+                                                                            <td align="left" valign="top" class="nopadding" style="padding: 0 10px 0 10px;">
+                                                                                <table width="235" align="left" class="makeFluid" style="width:235px; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" border="0" cellspacing="0" cellpadding="0">
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <td class="bottom-pad-25" align="center" valign="top" style="padding-bottom:36px;">
+                                                                                                <!--[if !mso 9]><!-->
+                                                                                                <div class="gmail" style="display: none; width: 0; overflow: hidden;  max-height: 0; mso-hide:all;">
+                                                                                                    <img border="0" src="https://i.imgur.com/Xf8IdeM.png" alt="" style="width:141px;display: block; border: none;" />
+                                                                                                </div>
+                                                                                                <!--<![endif]-->
+                                                                                                <img class="emailnomob" border="0" style="width:140px;display:block; border-style:none; min-width:140px;" src="https://i.imgur.com/ZIAfaMH.png" alt="" />
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="stack-column" align="left" valign="top" style="color:#000000;font-size: 16px; font-family:Arial, Helvetica, sans-serif;font-weight: bold;line-height:24px;">
+                                                                                                Verified by Visa
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="bottom-pad-25 stack-column" align="left" valign="top" style="padding-bottom:18px; color:#000000;font-size: 16px; font-family:Arial, Helvetica, sans-serif;font-weight: normal;line-height:24px;">
+                                                                                                Have increased confidence when buying online with your NAB Visa credit card. Verified by Visa offers comprehensive fraud protection that goes a step further by adding an extra layer of security when you enter credit card information online.
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td class="bottom-pad-55 stack-column-center" align="left" valign="top">
+                                                                                                <!--[if !mso 9]><!-->
+                                                                                                <div class="gmail" style="display: none; width: 0; overflow: hidden;  max-height: 0; mso-hide:all;">
+                                                                                                    <img border="0" src="https://imgur.com/05KGHQ2.png" alt="" style="width:280px;display: block; border: none;" />
+                                                                                                </div>
+                                                                                                <!--<![endif]-->
+                                                                                                <img class="emailnomob" border="0" style="width:162px;display:block; border-style:none; min-width:162px;" src="https://imgur.com/jDPwaNa.png" alt="" />
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                                <table width="195" align="right" class="makeFluid" style="width:195px; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" border="0" cellspacing="0" cellpadding="0">
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <td class="bottom-pad-25" align="center" valign="top" style="padding-bottom:25px;">
+                                                                                                <!--[if !mso 9]><!-->
+                                                                                                <div class="gmail" style="display: none; width: 0; overflow: hidden;  max-height: 0; mso-hide:all;">
+                                                                                                    <img border="0" src="https://i.imgur.com/IY4V2u8.png" alt="" style="width:172px;display: block; border: none;" />
+                                                                                                </div>
+                                                                                                <!--<![endif]-->
+                                                                                                <img class="emailnomob" border="0" style="width:99px;display:block; border-style:none; min-width:99px;" src="https://i.imgur.com/sULpiO8.png" alt="" />
+                                                                                            </td>
+                                                                                        </tr>
+
+                                                                                        <tr>
+                                                                                            <td align="left" valign="top" style="color:#000000;font-size: 16px; font-family:Arial, Helvetica, sans-serif;font-weight: bold;line-height:24px;">
+                                                                                                <!--[if !mso 9]><!-->
+                                                                                                <div class="gmail" style="display: none; width: 0; overflow: hidden;  max-height: 0; mso-hide:all;">
+                                                                                                    <span style="color:#000000;font-size: 16px; font-family:Arial, Helvetica, sans-serif;font-weight: bold;line-height:24px;">FlyBuys Rewards</span>
+                                                                                                </div>
+                                                                                                <!--<![endif]-->
+                                                                                                <span class="emailnomob" border="0" style="color:#000000;font-size: 16px; font-family:Arial, Helvetica, sans-serif;font-weight: bold;line-height:24px;">Complimentary Purchase Protection Insurance<span style="color:#000000;font-size: 12px; font-family:Arial, Helvetica, sans-serif;font-weight: bold;line-height:24px;"><sup>2</sup></span></span>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td align="left" valign="top" style="padding-bottom:39px; color:#000000;font-size: 16px; font-family:Arial, Helvetica, sans-serif;font-weight: normal;line-height:24px;">
+                                                                                                <!--[if !mso 9]><!-->
+                                                                                                <div class="gmail" style="display: none; width: 0; overflow: hidden;  max-height: 0; mso-hide:all;">
+                                                                                                    <span style="padding-bottom:43px; color:#000000;font-size: 16px; font-family:Arial, Helvetica, sans-serif;font-weight: normal;line-height:24px;">Earn 1 flybuys point per $1 of everyday purchases on your Visa card. You can redeem your points for your choice of a huge range of shopping, fashion, technology and more.</span>
+                                                                                                </div>
+                                                                                                <!--<![endif]-->
+                                                                                                <span class="emailnomob" border="0">Feel even more secure. We’ll protect the goods you’ve bought with your card from loss, theft and accidental damage for up to 3 months.</span>
+                                                                                            </td>
+                                                                                        </tr>
+
+                                                                                        <tr>
+                                                                                            <td class="stack-column-center" align="left" valign="top">
+                                                                                                <!--[if !mso 9]><!-->
+                                                                                                <div class="gmail" style="display: none; width: 0; overflow: hidden;  max-height: 0; mso-hide:all;">
+                                                                                                    <img border="0" src="https://imgur.com/05KGHQ2.png" alt="" style="width:280px;display: block; border: none;" />
+                                                                                                </div>
+                                                                                                <!--<![endif]-->
+                                                                                                <img class="emailnomob" border="0" style="width:162px;display:block; border-style:none; min-width:162px;" src="https://imgur.com/jDPwaNa.png" alt="" />
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- Row 2.4 Ends -->
+                                                            <!-- ***************** -->
+                                                            <!-- Row 2.5 Starts -->
+                                                            <tr>
+                                                                <td class="padding-line" align="top" valign="middle" style="padding:40px 60px 32px 60px;">
+                                                                    <!--[if !mso 9]><!-->
+                                                                    <div class="gmail" style="display: none; width: 0; overflow: hidden;  max-height: 0; mso-hide:all;">
+                                                                        <img border="0" src="https://i.imgur.com/FKhCzt7.png" alt="" style="width:280px;display: block; border: none;" />
+                                                                    </div>
+                                                                    <!--<![endif]-->
+                                                                    <img class="emailnomob" border="0" style="width:480px;display:block; border-style:none; min-width:480px;" src="https://i.imgur.com/OsKOkWP.png" alt="" /></td>
+                                                            </tr>
+
+                                                            <!-- ********************** -->
+                                                            <!-- Row 2.5 Ends -->
+                                                            <!-- Row 2.6 Starts -->
+                                                            <tr>
+                                                                <td class="padding-mobile no-top-pad" align="left" valign="top" style="padding:0px 165px 35px 60px;">
+                                                                    <table align="left" class="makeFluid" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" border="0" cellspacing="0" cellpadding="0">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td class="bottom-pad-8" align="left" valign="top" style="padding-bottom:10px; color:#000000;font-size: 16px; font-family:Arial, Helvetica, sans-serif;font-weight: bold;line-height:24px;">Any Questions?</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="bottom-pad-8" align="left" valign="top" style="padding-bottom:10px; color:#000000;font-size: 16px; font-family:Arial, Helvetica, sans-serif;font-weight: normal;line-height:24px;">For more information about your new NAB Visa card, visit
+                                                                                    <a href="#" style="text-decoration:none; color:#000000;font-weight:bold;">nab.com.au/mynewvisa</a> or call us on
+                                                                                    <span style="font-weight:bold;">13 37 68
+                                                                                    </span> (Mon-Fri 8am-7pm, Sat-Sun 9am-6pm AEST/ADST).</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="bottom-pad-8" align="left" valign="top" style="padding-bottom:10px; color:#000000;font-size: 16px; font-family:Arial, Helvetica, sans-serif;font-weight: normal;line-height:24px;">Thanks,</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td align="left" valign="top" style="color:#000000;font-size: 16px; font-family:Arial, Helvetica, sans-serif;font-weight: normal;line-height:24px;">NAB</td>
+                                                                            </tr>
+
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+
+                                                            <!-- ********************** -->
+                                                            <!-- Row 2.6 Ends -->
+
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <!-- Row 2 ends -->
+                                            <!-- ***************** -->
+                                            <!-- Row 3 starts -->
+                                            <tr>
+                                                <td align="center" class="black-strip-mob-padding" valign="middle" bgcolor="#000000" style="background-color:#000000;font-size: 14px;padding: 18px 105px 18px 108px;">
+                                                    <table width="387" class="makeFluid" style="width:387px;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" border="0" cellspacing="0" cellpadding="0">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td width="50%" class="width50pc" align="left" valign="top" style="width:50%;color:#ffffff;">
+                                                                    <table align="left" class="makeFluid" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" border="0" cellspacing="0" cellpadding="0">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td align="center" valign="top" class="nopadding bottom-pad-10" style="padding: 0 15px 0 0;">
+                                                                                    <!--[if !mso 9]><!-->
+                                                                                    <div class="gmail" style="display: none; width: 0; overflow: hidden;  max-height: 0; mso-hide:all;">
+                                                                                        <img border="0" src="https://imgur.com/bJZViOl.png" alt="Mobile" style="width:21px;display: block; border: none;" />
+                                                                                    </div>
+                                                                                    <!--<![endif]-->
+                                                                                    <img class="emailnomob" border="0" style="width:21px;display:block; border-style:none; min-width:21px;" src="https://imgur.com/bJZViOl.png" alt="Mobile" />
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                    <table align="left" class="makeFluid" style=" border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" border="0" cellspacing="0" cellpadding="0">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td align="left" valign="top" class="text-align-center" style="text-align: left;color: #ffffff;">Call us<br/>13&nbsp;37&nbsp;68&nbsp;</td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                                <td width="50%" class="width50pc" align="left" valign="top" style="width:50%;color:#ffffff;">
+                                                                    <table align="left" class="makeFluid" style=" border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" border="0" cellspacing="0" cellpadding="0">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td align="center" valign="top" class="nopadding bottom-pad-10" style="padding: 0 15px 0 0;">
+                                                                                    <!--[if !mso 9]><!-->
+                                                                                    <div class="gmail" style="display: none; width: 0; overflow: hidden;  max-height: 0; mso-hide:all;">
+                                                                                        <img border="0" src="https://imgur.com/UAjRojy.png" alt="Door" style="width:22px;display: block; border: none;" />
+                                                                                    </div>
+                                                                                    <!--<![endif]-->
+                                                                                    <img class="emailnomob" border="0" style="width:22px;display:block; border-style:none; min-width:22px;" src="https://imgur.com/UAjRojy.png" alt="Door" />
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                    <table align="left" class="makeFluid" style=" border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" border="0" cellspacing="0" cellpadding="0">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td align="left" valign="top" class="text-align-center" style="text-align: left;color: #ffffff;">Visit us today&nbsp;<br/><a href="#" style="color: #d20000; text-decoration: none;border-bottom:1px solid #d20000;">Locate a branch</a></td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <!-- Row 3 Ends -->
+                                            <!-- ***************** -->
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- Inner table ends -->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- Wrapper table ends -->
+</body>
+
+</html>
