@@ -1,0 +1,5 @@
+dist/
+node_modules/
+.sublime-settings
+.DS_Store\
+.vscode
