@@ -1,0 +1,935 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+    <!--[if gte mso 9]><xml>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+  <o:PixelsPerInch>96</o:PixelsPerInch>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A Simple Responsive HTML Emailer 04</title>
+    <style type="text/css">
+        /* General Classes for cross Email client rendering ease.*/
+        
+        a {
+            padding: 0;
+            text-decoration: none;
+        }
+        
+        body {
+            width: 100% !important;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            margin: 0;
+            padding: 0;
+            mso-line-height-rule: exactly;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        @media only screen and (max-width: 600px) {
+            .emailnomob {
+                display: none !important;
+            }
+            .makeFluid {
+                width: 100% !important;
+                height: auto !important;
+            }
+            a[x-apple-data-detectors] {
+                color: inherit !important;
+                text-decoration: none !important;
+                font-size: inherit !important;
+                font-family: inherit !important;
+                font-weight: inherit !important;
+                line-height: inherit !important;
+            }
+            .gmail {
+                display: block!important;
+                width: auto!important;
+                overflow: visible!important;
+                float: none !important;
+                height: inherit!important;
+                max-height: inherit!important;
+            }
+            .header {
+                padding: 10px 10px 10px 0px !important;
+            }
+            .innerWrapper {
+                width: 320px !important;
+                margin: 0 !important;
+                min-width: 320px !important;
+            }
+            td[class=nopadding],
+            table[class=nopadding],
+            span[class=nopadding] {
+                padding: 0 !important;
+            }
+            .left-right-pad-8 {
+                padding-left: 8px !important;
+                padding-right: 8px !important;
+            }
+            .font-size-12 {
+                font-size: 12px !important;
+            }
+            .font-size-13 {
+                font-size: 13px !important;
+            }
+            .font-size-24 {
+                font-size: 24px !important;
+            }
+            .table-header {
+                padding: 16px 11px 16px 11px !important;
+            }
+            .table-row-padding {
+                padding: 15px 15px 15px 11px !important;
+            }
+            .table-row-width {
+                width: 190px !important;
+            }
+            .table-content-bottom-pad {
+                padding-bottom: 40px !important;
+            }
+            .no-top-pad {
+                padding-top: 0 !important;
+            }
+            .bottom-pad-20 {
+                padding-bottom: 20px !important;
+            }
+            .bottom-pad-8 {
+                padding-bottom: 8px !important;
+            }
+            .no-bottom-pad {
+                padding-bottom: 0px !important;
+            }
+            .no-line-height {
+                line-height: 0px !important;
+            }
+            .no-left-pad {
+                padding-left: 0px !important;
+            }
+            .no-right-pad {
+                padding-right: 0px !important;
+            }
+            .line-height-28 {
+                line-height: 28px !important;
+            }
+            .line-height-29 {
+                line-height: 29px !important;
+            }
+            .bg-color {
+                background-color: #f1f2f6 !important;
+            }
+            .bottom-pad-77 {
+                padding-bottom: 77px !important;
+            }
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            .stack-column {
+                text-align: left !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+        }
+    </style>
+</head>
+
+<body style="padding:0px; margin:0;-webkit-text-size-adjust:none; background-color:#f1f2f6;" bgcolor="#f1f2f6">
+    <!-- Wrapper table begins -->
+    <table bgcolor="#eff1f3" width="100%" align="center" border="0" cellspacing="0" cellpadding="0" style="background-color:#eff1f3;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+        <tbody>
+            <tr>
+                <td align="center" valign="top">
+                    <!-- Inner table begins -->
+                    <table width="600" style="min-width:600px; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" border="0" cellspacing="0" cellpadding="0" class="innerWrapper">
+                        <tbody>
+                            <tr>
+                                <td align="center" valign="top">
+                                    <table width="100%" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" border="0" cellspacing="0" cellpadding="0">
+                                        <tbody>
+                                            <!-- Row 1 Starts -->
+                                            <tr>
+                                                <td class="header" align="center" valign="top" style="color:#434343; padding: 30px 0 50px 0; font-family:Arial, Helvetica, sans-serif; font-size: 12px;">
+                                                    Having trouble viewing this email? <a href="#" style="color: #dd2200; text-decoration:underline">View online</a>
+                                                </td>
+                                            </tr>
+                                            <!-- Row 1 ends -->
+                                            <!-- ************************************** -->
+                                            <!-- Row 2 Starts -->
+                                            <tr>
+                                                <td align="center" valign="top">
+                                                    <!--[if !mso 9]><!-->
+                                                    <div class="gmail" style="display: none; width: 0; overflow: hidden; float: left; max-height: 0; mso-hide:all;">
+                                                        <img height="1" border="0" src="https://imgur.com/eV99MiN.png" alt="Daily Report" class="makeFluid" style="width:1px;display: block; border: none;" />
+                                                    </div>
+                                                    <!--<![endif]-->
+                                                    <img class="emailnomob" height="335" border="0" width="600" style="width:600px;display:block; border-style:none; min-width:600px;" src="https://imgur.com/nyKLo8N.png" alt="Daily Report" />
+                                                </td>
+                                            </tr>
+                                            <!-- Row 2 ends -->
+                                            <!-- ************************************** -->
+                                            <!-- Row 3 Starts -->
+                                            <tr>
+                                                <td class="left-right-pad-8 bottom-pad-77" align="center" valign="top" bgcolor="#ffffff" style="background-color:#ffffff; padding:40px 36px 89px 36px; border-radius:5px;">
+                                                    <table class="makeFluid" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                                        <tbody>
+                                                            <!-- Row 3.1 Starts -->
+                                                            <tr>
+                                                                <td align="center" valign="top" style="padding-bottom:89px;">
+                                                                    <table border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td class="table-content-bottom-pad" align="left" valign="top" style="padding-bottom:60px">
+                                                                                    <table class="makeFluid" width="528" border="0" cellspacing="0" cellpadding="0" style="width:528px; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <td align="left" class="table-header" valign="top" style="padding:20px 22px 20px 26px;background-color:#e6e9ea; border:1px solid #e6e9ea;">
+                                                                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                                                                                        <tbody>
+                                                                                                            <tr>
+                                                                                                                <td align="left" valign="top" style="font-family: Arial, Helvetica, san-serif;font-size:16px;font-weight:bold;line-height:32px;">PHASE 1</td>
+                                                                                                                <td align="right" valign="top" style="font-family: Arial, Helvetica, san-serif;font-size:16px;font-weight:bold;line-height:32px;">Nov 01 - 20</td>
+                                                                                                            </tr>
+                                                                                                        </tbody>
+                                                                                                    </table>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td class="table-row-padding" align="left" valign="top" style="padding: 10px 22px 10px 26px;border:1px solid #e6e9ea;">
+                                                                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                                                                                        <tbody>
+                                                                                                            <tr>
+                                                                                                                <td rowspan="2" width="77" class="emailnomob" align="left" valign="middle" style="width:77px;padding-top:4px;vertical-align: middle;"><img src="https://imgur.com/dNtHwIt.png" alt=""></td>
+                                                                                                                <td class="table-row-width" align="left" valign="top" style="color:#1b1b1b;padding-top:16px;font-family: Arial, Helvetica, san-serif;font-size:14px;">Total Volume</td>
+                                                                                                                <td align="right" valign="bottom" style="color:#1b1b1b;padding-top:16px;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:14px;">xxxxx</td>
+                                                                                                            </tr>
+                                                                                                            <tr>
+                                                                                                                <td align="left" valign="top" style="color:#1b1b1b;padding-top:17px;padding-bottom:4px;font-family: Arial, Helvetica, san-serif;font-size:14px;">Total Accounts Migrated</td>
+                                                                                                                <td align="right" valign="bottom" style="color:#1b1b1b;padding-top:17px;padding-bottom:4px;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:14px;">xxxxx</td>
+                                                                                                            </tr>
+                                                                                                        </tbody>
+                                                                                                    </table>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td class="table-row-padding" align="left" valign="top" style="padding: 10px 22px 10px 26px;border:1px solid #e6e9ea;">
+                                                                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                                                                                        <tbody>
+                                                                                                            <tr>
+                                                                                                                <td rowspan="2" width="77" class="emailnomob" align="left" valign="middle" style="width:77px;padding-top:4px;vertical-align: middle;"><img src="https://imgur.com/u1MRaIc.png" alt="" /></td>
+                                                                                                                <td class="table-row-width" align="left" valign="top" style="color:#1b1b1b;padding-top:16px;font-family: Arial, Helvetica, san-serif;font-size:14px;">Today’s DM Notification Data Sent</td>
+                                                                                                                <td align="right" valign="bottom" style="color:#1b1b1b;padding-top:16px;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:14px;">xxxxx</td>
+                                                                                                            </tr>
+                                                                                                            <tr>
+                                                                                                                <td class="table-row-width" align="left" valign="top" style="color:#1b1b1b;padding-top:16px;font-family: Arial, Helvetica, san-serif;font-size:14px;">Today’s DM Notification Lodgement</td>
+                                                                                                                <td align="right" valign="bottom" style="color:#1b1b1b;padding-top:16px;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:14px;">xxxxx</td>
+                                                                                                            </tr>
+                                                                                                            <tr>
+                                                                                                                <td class="emailnomob"></td>
+                                                                                                                <td align="left" valign="top" style="color:#1b1b1b;padding-top:17px;padding-bottom:4px;font-family: Arial, Helvetica, san-serif;font-size:14px;">Total DM Notification Lodged</td>
+                                                                                                                <td align="right" valign="bottom" style="color:#1b1b1b;padding-top:17px;padding-bottom:4px;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:14px;">xxxxx</td>
+                                                                                                            </tr>
+                                                                                                        </tbody>
+                                                                                                    </table>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td class="table-row-padding" align="left" valign="top" style="padding: 10px 22px 10px 26px;border:1px solid #e6e9ea;">
+                                                                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                                                                                        <tbody>
+                                                                                                            <tr>
+                                                                                                                <td rowspan="2" width="77" class="emailnomob" align="left" valign="top" style="width:77px;padding-top:12px;"><img src="https://imgur.com/0v6KsM5.png" alt="" /></td>
+                                                                                                                <td class="table-row-width" align="left" valign="top" style="color:#1b1b1b;padding-top:7px;font-family: Arial, Helvetica, san-serif;font-size:14px;">Today’s Follow Up EDM Sent</td>
+                                                                                                                <td align="right" valign="bottom" style="color:#1b1b1b;padding-top:7px;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:14px;">xxxxx</td>
+                                                                                                            </tr>
+                                                                                                            <tr>
+                                                                                                                <td align="left" valign="top" style="color:#1b1b1b;padding-top:16px;padding-bottom:5px;font-family: Arial, Helvetica, san-serif;font-size:14px;">Total Follow Up EDMs Sent</td>
+                                                                                                                <td align="right" valign="bottom" style="color:#1b1b1b;padding-top:16px;padding-bottom:5px;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:14px;">xxxxx</td>
+                                                                                                            </tr>
+                                                                                                        </tbody>
+                                                                                                    </table>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td class="table-row-padding" align="left" valign="top" style="padding: 10px 22px 10px 26px;border:1px solid #e6e9ea;">
+                                                                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                                                                                        <tbody>
+                                                                                                            <tr>
+                                                                                                                <td rowspan="2" width="77" class="emailnomob" align="left" valign="top" style="width:77px;padding-top:12px;"><img src="https://imgur.com/Gs76zEQ.png" alt="" /></td>
+                                                                                                                <td class="table-row-width" align="left" valign="top" style="color:#1b1b1b;padding-top:7px;font-family: Arial, Helvetica, san-serif;font-size:14px;">Today’s SMS/EDM Card Location Sent</td>
+                                                                                                                <td align="right" valign="bottom" style="color:#1b1b1b;padding-top:7px;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:14px;">xxxxx</td>
+                                                                                                            </tr>
+                                                                                                            <tr>
+                                                                                                                <td align="left" valign="top" style="color:#1b1b1b;padding-top:16px;padding-bottom:5px;font-family: Arial, Helvetica, san-serif;font-size:14px;">Total SMS/EDM Card Location Sent</td>
+                                                                                                                <td align="right" valign="bottom" style="color:#1b1b1b;padding-top:16px;padding-bottom:5px;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:14px;">xxxxx</td>
+                                                                                                            </tr>
+                                                                                                        </tbody>
+                                                                                                    </table>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td class="table-row-padding" align="left" valign="top" style="padding: 27px 22px 27px 26px;border:1px solid #e6e9ea;">
+                                                                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                                                                                        <tbody>
+                                                                                                            <tr>
+                                                                                                                <td rowspan="2" width="77" class="emailnomob" align="left" valign="middle" style="width:77px;vertical-align: middle;"><img src="https://imgur.com/gWNrwDe.png" alt="" /></td>
+                                                                                                                <td class="table-row-width" align="left" valign="middle" style="color:#1b1b1b;font-family: Arial, Helvetica, san-serif;font-size:14px;vertical-align: middle;">Today’s Bulk Swap Volume</td>
+                                                                                                                <td align="right" valign="middle" style="color:#1b1b1b;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:14px;vertical-align: middle;">xxxxx</td>
+                                                                                                            </tr>
+                                                                                                        </tbody>
+                                                                                                    </table>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td class="table-row-padding" align="left" valign="top" style="padding: 10px 22px 10px 26px;border:1px solid #e6e9ea;">
+                                                                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                                                                                        <tbody>
+                                                                                                            <tr>
+                                                                                                                <td rowspan="2" width="77" class="emailnomob" align="left" valign="top" style="width:77px;padding-top:12px;"><img src="https://imgur.com/7UzxReX.png" alt="" /></td>
+                                                                                                                <td class="table-row-width" align="left" valign="top" style="color:#1b1b1b;padding-top:7px;font-family: Arial, Helvetica, san-serif;font-size:14px;">Today’s Unsuccessful DM Lodgement</td>
+                                                                                                                <td align="right" valign="bottom" style="color:#1b1b1b;padding-top:7px;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:14px;">xxxxx</td>
+                                                                                                            </tr>
+                                                                                                            <tr>
+                                                                                                                <td align="left" valign="top" style="color:#1b1b1b;padding-top:16px;padding-bottom:5px;font-family: Arial, Helvetica, san-serif;font-size:14px;">Total Unsuccessful DMs Lodged</td>
+                                                                                                                <td align="right" valign="bottom" style="color:#1b1b1b;padding-top:16px;padding-bottom:5px;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:14px;">xxxxx</td>
+                                                                                                            </tr>
+                                                                                                        </tbody>
+                                                                                                    </table>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="table-row-padding no-top-pad" align="left" valign="top" style="padding:0 22px 16px 26px;">
+                                                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <td class="font-size-13 stack-column" align="left" valign="top" style="color:#1b1b1b;font-family: Arial, Helvetica, san-serif;font-size:17px;font-weight:bold;line-height:24px;">CARD MIGRATION CAPACITY (THROTTLE)</td>
+                                                                                                <td class="font-size-13 stack-column" align="right" valign="top" style="color:#1b1b1b;font-family: Arial, Helvetica, san-serif;font-size:17px;font-weight:bold;line-height:24px;">Nov 01 - 20</td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr class="emailnomob">
+                                                                                <td align="left" valign="middle" style="padding-bottom:38px;">
+                                                                                    <img border="0" width="528" style="width:528px; display:block; border-style:none;" src="https://imgur.com/nbWf855.png" alt="Divider" />
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="table-row-padding no-bottom-pad" align="left" valign="top" style="padding:0 22px 0px 26px;">
+                                                                                    <table class="makeFluid" width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <td class="stack-column bottom-pad-8 no-right-pad" width="33.3%" align="center" valign="top" style="width:33.3%;padding-right: 40px;">
+                                                                                                    <span class="font-size-24" style="color:#d20000;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:32px;">6,800</span>
+                                                                                                    <br class="emailnomob" /><br/>
+                                                                                                    <span class="font-size-12 line-height-29" style="color:#1b1b1b;font-family: Arial, Helvetica, san-serif;font-size:14px;line-height:24px;">Direct mail planned capacity</span>
+                                                                                                </td>
+                                                                                                <td class="stack-column bottom-pad-8 no-right-pad" width="33.3%" align="center" valign="top" style="width:33.3%;padding-right: 20px;">
+                                                                                                    <span class="font-size-24" style="color:#d20000;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:32px;">988,200</span>
+                                                                                                    <br class="emailnomob" /><br/>
+                                                                                                    <span class="font-size-12 line-height-29" style="color:#1b1b1b;font-family: Arial, Helvetica, san-serif;font-size:14px;line-height:24px;">Today's migration capacity for like for like switch</span>
+                                                                                                </td>
+                                                                                                <td class="stack-column bottom-pad-8 no-left-pad" width="33.3%" align="center" valign="top" style="width:33.3%;padding-left: 24px;">
+                                                                                                    <span class="font-size-24" style="color:#d20000;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:32px;">8,120</span>
+                                                                                                    <br class="emailnomob" /><br/>
+                                                                                                    <span class="font-size-12 line-height-29" style="color:#1b1b1b;font-family: Arial, Helvetica, san-serif;font-size:14px;line-height:24px;">Today's migration capacity for customer upgrades</span>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- Row 3.1 ends -->
+                                                            <!-- ************************************** -->
+                                                            <!-- Row 3.2 Starts -->
+                                                            <tr>
+                                                                <td align="center" valign="top" style="padding-bottom:89px;">
+                                                                    <table class="makeFluid" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td class="table-content-bottom-pad" align="left" valign="top" style="padding-bottom:60px">
+                                                                                    <table class="makeFluid" width="528" border="0" cellspacing="0" cellpadding="0" style="width:528px; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <td align="left" class="table-header" valign="top" style="padding:20px 22px 20px 26px;background-color:#e6e9ea; border:1px solid #e6e9ea;">
+                                                                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                                                                                        <tbody>
+                                                                                                            <tr>
+                                                                                                                <td align="left" valign="top" style="font-family: Arial, Helvetica, san-serif;font-size:16px;font-weight:bold;line-height:32px;">PHASE 1</td>
+                                                                                                                <td align="right" valign="top" style="font-family: Arial, Helvetica, san-serif;font-size:16px;font-weight:bold;line-height:32px;">Dec 01 - 20</td>
+                                                                                                            </tr>
+                                                                                                        </tbody>
+                                                                                                    </table>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td class="table-row-padding" align="left" valign="top" style="padding: 10px 22px 10px 26px;border:1px solid #e6e9ea;">
+                                                                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                                                                                        <tbody>
+                                                                                                            <tr>
+                                                                                                                <td rowspan="2" width="77" class="emailnomob" align="left" valign="middle" style="width:77px;padding-top:4px;vertical-align: middle;"><img src="https://imgur.com/dNtHwIt.png" alt=""></td>
+                                                                                                                <td class="table-row-width" align="left" valign="top" style="color:#1b1b1b;padding-top:16px;font-family: Arial, Helvetica, san-serif;font-size:14px;">Total Volume</td>
+                                                                                                                <td align="right" valign="bottom" style="color:#1b1b1b;padding-top:16px;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:14px;">xxxxx</td>
+                                                                                                            </tr>
+                                                                                                            <tr>
+                                                                                                                <td align="left" valign="top" style="color:#1b1b1b;padding-top:17px;padding-bottom:4px;font-family: Arial, Helvetica, san-serif;font-size:14px;">Total Accounts Migrated</td>
+                                                                                                                <td align="right" valign="bottom" style="color:#1b1b1b;padding-top:17px;padding-bottom:4px;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:14px;">xxxxx</td>
+                                                                                                            </tr>
+                                                                                                        </tbody>
+                                                                                                    </table>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td class="table-row-padding" align="left" valign="top" style="padding: 10px 22px 10px 26px;border:1px solid #e6e9ea;">
+                                                                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                                                                                        <tbody>
+                                                                                                            <tr>
+                                                                                                                <td rowspan="2" width="77" class="emailnomob" align="left" valign="middle" style="width:77px;padding-top:4px;vertical-align: middle;"><img src="https://imgur.com/u1MRaIc.png" alt="" /></td>
+                                                                                                                <td class="table-row-width" align="left" valign="top" style="color:#1b1b1b;padding-top:16px;font-family: Arial, Helvetica, san-serif;font-size:14px;">Today’s DM Notification Data Sent</td>
+                                                                                                                <td align="right" valign="bottom" style="color:#1b1b1b;padding-top:16px;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:14px;">xxxxx</td>
+                                                                                                            </tr>
+                                                                                                            <tr>
+                                                                                                                <td class="table-row-width" align="left" valign="top" style="color:#1b1b1b;padding-top:16px;font-family: Arial, Helvetica, san-serif;font-size:14px;">Today’s DM Notification Lodgement</td>
+                                                                                                                <td align="right" valign="bottom" style="color:#1b1b1b;padding-top:16px;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:14px;">xxxxx</td>
+                                                                                                            </tr>
+                                                                                                            <tr>
+                                                                                                                <td class="emailnomob"></td>
+                                                                                                                <td align="left" valign="top" style="color:#1b1b1b;padding-top:17px;padding-bottom:4px;font-family: Arial, Helvetica, san-serif;font-size:14px;">Total DM Notification Lodged</td>
+                                                                                                                <td align="right" valign="bottom" style="color:#1b1b1b;padding-top:17px;padding-bottom:4px;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:14px;">xxxxx</td>
+                                                                                                            </tr>
+                                                                                                        </tbody>
+                                                                                                    </table>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td class="table-row-padding" align="left" valign="top" style="padding: 10px 22px 10px 26px;border:1px solid #e6e9ea;">
+                                                                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                                                                                        <tbody>
+                                                                                                            <tr>
+                                                                                                                <td rowspan="2" width="77" class="emailnomob" align="left" valign="top" style="width:77px;padding-top:12px;"><img src="https://imgur.com/0v6KsM5.png" alt="" /></td>
+                                                                                                                <td class="table-row-width" align="left" valign="top" style="color:#1b1b1b;padding-top:7px;font-family: Arial, Helvetica, san-serif;font-size:14px;">Today’s Follow Up EDM Sent</td>
+                                                                                                                <td align="right" valign="bottom" style="color:#1b1b1b;padding-top:7px;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:14px;">xxxxx</td>
+                                                                                                            </tr>
+                                                                                                            <tr>
+                                                                                                                <td align="left" valign="top" style="color:#1b1b1b;padding-top:16px;padding-bottom:5px;font-family: Arial, Helvetica, san-serif;font-size:14px;">Total Follow Up EDMs Sent</td>
+                                                                                                                <td align="right" valign="bottom" style="color:#1b1b1b;padding-top:16px;padding-bottom:5px;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:14px;">xxxxx</td>
+                                                                                                            </tr>
+                                                                                                        </tbody>
+                                                                                                    </table>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td class="table-row-padding" align="left" valign="top" style="padding: 10px 22px 10px 26px;border:1px solid #e6e9ea;">
+                                                                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                                                                                        <tbody>
+                                                                                                            <tr>
+                                                                                                                <td rowspan="2" width="77" class="emailnomob" align="left" valign="top" style="width:77px;padding-top:12px;"><img src="https://imgur.com/Gs76zEQ.png" alt="" /></td>
+                                                                                                                <td class="table-row-width" align="left" valign="top" style="color:#1b1b1b;padding-top:7px;font-family: Arial, Helvetica, san-serif;font-size:14px;">Today’s SMS/EDM Card Location Sent</td>
+                                                                                                                <td align="right" valign="bottom" style="color:#1b1b1b;padding-top:7px;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:14px;">xxxxx</td>
+                                                                                                            </tr>
+                                                                                                            <tr>
+                                                                                                                <td align="left" valign="top" style="color:#1b1b1b;padding-top:16px;padding-bottom:5px;font-family: Arial, Helvetica, san-serif;font-size:14px;">Total SMS/EDM Card Location Sent</td>
+                                                                                                                <td align="right" valign="bottom" style="color:#1b1b1b;padding-top:16px;padding-bottom:5px;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:14px;">xxxxx</td>
+                                                                                                            </tr>
+                                                                                                        </tbody>
+                                                                                                    </table>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td class="table-row-padding" align="left" valign="top" style="padding: 27px 22px 27px 26px;border:1px solid #e6e9ea;">
+                                                                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                                                                                        <tbody>
+                                                                                                            <tr>
+                                                                                                                <td rowspan="2" width="77" class="emailnomob" align="left" valign="middle" style="width:77px;vertical-align: middle;"><img src="https://imgur.com/gWNrwDe.png" alt="" /></td>
+                                                                                                                <td class="table-row-width" align="left" valign="middle" style="color:#1b1b1b;font-family: Arial, Helvetica, san-serif;font-size:14px;vertical-align: middle;">Today’s Bulk Swap Volume</td>
+                                                                                                                <td align="right" valign="middle" style="color:#1b1b1b;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:14px;vertical-align: middle;">xxxxx</td>
+                                                                                                            </tr>
+                                                                                                        </tbody>
+                                                                                                    </table>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td class="table-row-padding" align="left" valign="top" style="padding: 10px 22px 10px 26px;border:1px solid #e6e9ea;">
+                                                                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                                                                                        <tbody>
+                                                                                                            <tr>
+                                                                                                                <td rowspan="2" width="77" class="emailnomob" align="left" valign="top" style="width:77px;padding-top:12px;"><img src="https://imgur.com/7UzxReX.png" alt="" /></td>
+                                                                                                                <td class="table-row-width" align="left" valign="top" style="color:#1b1b1b;padding-top:7px;font-family: Arial, Helvetica, san-serif;font-size:14px;">Today’s Unsuccessful DM Lodgement</td>
+                                                                                                                <td align="right" valign="bottom" style="color:#1b1b1b;padding-top:7px;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:14px;">xxxxx</td>
+                                                                                                            </tr>
+                                                                                                            <tr>
+                                                                                                                <td align="left" valign="top" style="color:#1b1b1b;padding-top:16px;padding-bottom:5px;font-family: Arial, Helvetica, san-serif;font-size:14px;">Total Unsuccessful DMs Lodged</td>
+                                                                                                                <td align="right" valign="bottom" style="color:#1b1b1b;padding-top:16px;padding-bottom:5px;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:14px;">xxxxx</td>
+                                                                                                            </tr>
+                                                                                                        </tbody>
+                                                                                                    </table>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="table-row-padding no-top-pad" align="left" valign="top" style="padding:0 22px 16px 26px;">
+                                                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <td class="font-size-13 stack-column" align="left" valign="top" style="color:#1b1b1b;font-family: Arial, Helvetica, san-serif;font-size:17px;font-weight:bold;line-height:24px;">CARD MIGRATION CAPACITY (THROTTLE)</td>
+                                                                                                <td class="font-size-13 stack-column" align="right" valign="top" style="color:#1b1b1b;font-family: Arial, Helvetica, san-serif;font-size:17px;font-weight:bold;line-height:24px;">Dec 01 - 20</td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr class="emailnomob">
+                                                                                <td align="left" valign="middle" style="padding-bottom:38px;">
+                                                                                    <img border="0" width="528" style="width:528px; display:block; border-style:none;" src="https://imgur.com/nbWf855.png" alt="Divider" />
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="table-row-padding no-bottom-pad" align="left" valign="top" style="padding:0 22px 0px 26px;">
+                                                                                    <table class="makeFluid" width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <td class="stack-column bottom-pad-8 no-right-pad" width="33.3%" align="center" valign="top" style="width:33.3%;padding-right: 40px;">
+                                                                                                    <span class="font-size-24" style="color:#d20000;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:32px;">6,800</span>
+                                                                                                    <br class="emailnomob" /><br/>
+                                                                                                    <span class="font-size-12 line-height-29" style="color:#1b1b1b;font-family: Arial, Helvetica, san-serif;font-size:14px;line-height:24px;">Direct mail planned capacity</span>
+                                                                                                </td>
+                                                                                                <td class="stack-column bottom-pad-8 no-right-pad" width="33.3%" align="center" valign="top" style="width:33.3%;padding-right: 20px;">
+                                                                                                    <span class="font-size-24" style="color:#d20000;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:32px;">988,200</span>
+                                                                                                    <br class="emailnomob" /><br/>
+                                                                                                    <span class="font-size-12 line-height-29" style="color:#1b1b1b;font-family: Arial, Helvetica, san-serif;font-size:14px;line-height:24px;">Today's migration capacity for like for like switch</span>
+                                                                                                </td>
+                                                                                                <td class="stack-column bottom-pad-8 no-left-pad" width="33.3%" align="center" valign="top" style="width:33.3%;padding-left: 24px;">
+                                                                                                    <span class="font-size-24" style="color:#d20000;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:32px;">8,120</span>
+                                                                                                    <br class="emailnomob" /><br/>
+                                                                                                    <span class="font-size-12 line-height-29" style="color:#1b1b1b;font-family: Arial, Helvetica, san-serif;font-size:14px;line-height:24px;">Today's migration capacity for customer upgrades</span>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- Row 3.2 ends -->
+                                                            <!-- ************************************** -->
+                                                            <!-- Row 3.3 Starts -->
+                                                            <tr>
+                                                                <td align="center" valign="top">
+                                                                    <table class="makeFluid" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td class="table-content-bottom-pad" align="left" valign="top" style="padding-bottom:60px">
+                                                                                    <table class="makeFluid" width="528" border="0" cellspacing="0" cellpadding="0" style="width:528px; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <td align="left" class="table-header" valign="top" style="padding:20px 22px 20px 26px;background-color:#e6e9ea; border:1px solid #e6e9ea;">
+                                                                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                                                                                        <tbody>
+                                                                                                            <tr>
+                                                                                                                <td align="left" valign="top" style="font-family: Arial, Helvetica, san-serif;font-size:16px;font-weight:bold;line-height:32px;">PHASE 1</td>
+                                                                                                                <td align="right" valign="top" style="font-family: Arial, Helvetica, san-serif;font-size:16px;font-weight:bold;line-height:32px;">Jan 01 - 20</td>
+                                                                                                            </tr>
+                                                                                                        </tbody>
+                                                                                                    </table>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td class="table-row-padding" align="left" valign="top" style="padding: 10px 22px 10px 26px;border:1px solid #e6e9ea;">
+                                                                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                                                                                        <tbody>
+                                                                                                            <tr>
+                                                                                                                <td rowspan="2" width="77" class="emailnomob" align="left" valign="middle" style="width:77px;padding-top:4px;vertical-align: middle;"><img src="https://imgur.com/dNtHwIt.png" alt=""></td>
+                                                                                                                <td class="table-row-width" align="left" valign="top" style="color:#1b1b1b;padding-top:16px;font-family: Arial, Helvetica, san-serif;font-size:14px;">Total Volume</td>
+                                                                                                                <td align="right" valign="bottom" style="color:#1b1b1b;padding-top:16px;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:14px;">xxxxx</td>
+                                                                                                            </tr>
+                                                                                                            <tr>
+                                                                                                                <td align="left" valign="top" style="color:#1b1b1b;padding-top:17px;padding-bottom:4px;font-family: Arial, Helvetica, san-serif;font-size:14px;">Total Accounts Migrated</td>
+                                                                                                                <td align="right" valign="bottom" style="color:#1b1b1b;padding-top:17px;padding-bottom:4px;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:14px;">xxxxx</td>
+                                                                                                            </tr>
+                                                                                                        </tbody>
+                                                                                                    </table>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td class="table-row-padding" align="left" valign="top" style="padding: 10px 22px 10px 26px;border:1px solid #e6e9ea;">
+                                                                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                                                                                        <tbody>
+                                                                                                            <tr>
+                                                                                                                <td rowspan="2" width="77" class="emailnomob" align="left" valign="middle" style="width:77px;padding-top:4px;vertical-align: middle;"><img src="https://imgur.com/u1MRaIc.png" alt="" /></td>
+                                                                                                                <td class="table-row-width" align="left" valign="top" style="color:#1b1b1b;padding-top:16px;font-family: Arial, Helvetica, san-serif;font-size:14px;">Today’s DM Notification Data Sent</td>
+                                                                                                                <td align="right" valign="bottom" style="color:#1b1b1b;padding-top:16px;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:14px;">xxxxx</td>
+                                                                                                            </tr>
+                                                                                                            <tr>
+                                                                                                                <td class="table-row-width" align="left" valign="top" style="color:#1b1b1b;padding-top:16px;font-family: Arial, Helvetica, san-serif;font-size:14px;">Today’s DM Notification Lodgement</td>
+                                                                                                                <td align="right" valign="bottom" style="color:#1b1b1b;padding-top:16px;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:14px;">xxxxx</td>
+                                                                                                            </tr>
+                                                                                                            <tr>
+                                                                                                                <td class="emailnomob"></td>
+                                                                                                                <td align="left" valign="top" style="color:#1b1b1b;padding-top:17px;padding-bottom:4px;font-family: Arial, Helvetica, san-serif;font-size:14px;">Total DM Notification Lodged</td>
+                                                                                                                <td align="right" valign="bottom" style="color:#1b1b1b;padding-top:17px;padding-bottom:4px;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:14px;">xxxxx</td>
+                                                                                                            </tr>
+                                                                                                        </tbody>
+                                                                                                    </table>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td class="table-row-padding" align="left" valign="top" style="padding: 10px 22px 10px 26px;border:1px solid #e6e9ea;">
+                                                                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                                                                                        <tbody>
+                                                                                                            <tr>
+                                                                                                                <td rowspan="2" width="77" class="emailnomob" align="left" valign="top" style="width:77px;padding-top:12px;"><img src="https://imgur.com/0v6KsM5.png" alt="" /></td>
+                                                                                                                <td class="table-row-width" align="left" valign="top" style="color:#1b1b1b;padding-top:7px;font-family: Arial, Helvetica, san-serif;font-size:14px;">Today’s Follow Up EDM Sent</td>
+                                                                                                                <td align="right" valign="bottom" style="color:#1b1b1b;padding-top:7px;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:14px;">xxxxx</td>
+                                                                                                            </tr>
+                                                                                                            <tr>
+                                                                                                                <td align="left" valign="top" style="color:#1b1b1b;padding-top:16px;padding-bottom:5px;font-family: Arial, Helvetica, san-serif;font-size:14px;">Total Follow Up EDMs Sent</td>
+                                                                                                                <td align="right" valign="bottom" style="color:#1b1b1b;padding-top:16px;padding-bottom:5px;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:14px;">xxxxx</td>
+                                                                                                            </tr>
+                                                                                                        </tbody>
+                                                                                                    </table>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td class="table-row-padding" align="left" valign="top" style="padding: 10px 22px 10px 26px;border:1px solid #e6e9ea;">
+                                                                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                                                                                        <tbody>
+                                                                                                            <tr>
+                                                                                                                <td rowspan="2" width="77" class="emailnomob" align="left" valign="top" style="width:77px;padding-top:12px;"><img src="https://imgur.com/Gs76zEQ.png" alt="" /></td>
+                                                                                                                <td class="table-row-width" align="left" valign="top" style="color:#1b1b1b;padding-top:7px;font-family: Arial, Helvetica, san-serif;font-size:14px;">Today’s SMS/EDM Card Location Sent</td>
+                                                                                                                <td align="right" valign="bottom" style="color:#1b1b1b;padding-top:7px;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:14px;">xxxxx</td>
+                                                                                                            </tr>
+                                                                                                            <tr>
+                                                                                                                <td align="left" valign="top" style="color:#1b1b1b;padding-top:16px;padding-bottom:5px;font-family: Arial, Helvetica, san-serif;font-size:14px;">Total SMS/EDM Card Location Sent</td>
+                                                                                                                <td align="right" valign="bottom" style="color:#1b1b1b;padding-top:16px;padding-bottom:5px;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:14px;">xxxxx</td>
+                                                                                                            </tr>
+                                                                                                        </tbody>
+                                                                                                    </table>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td class="table-row-padding" align="left" valign="top" style="padding: 27px 22px 27px 26px;border:1px solid #e6e9ea;">
+                                                                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                                                                                        <tbody>
+                                                                                                            <tr>
+                                                                                                                <td rowspan="2" width="77" class="emailnomob" align="left" valign="middle" style="width:77px;vertical-align: middle;"><img src="https://imgur.com/gWNrwDe.png" alt="" /></td>
+                                                                                                                <td class="table-row-width" align="left" valign="middle" style="color:#1b1b1b;font-family: Arial, Helvetica, san-serif;font-size:14px;vertical-align: middle;">Today’s Bulk Swap Volume</td>
+                                                                                                                <td align="right" valign="middle" style="color:#1b1b1b;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:14px;vertical-align: middle;">xxxxx</td>
+                                                                                                            </tr>
+                                                                                                        </tbody>
+                                                                                                    </table>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td class="table-row-padding" align="left" valign="top" style="padding: 10px 22px 10px 26px;border:1px solid #e6e9ea;">
+                                                                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                                                                                        <tbody>
+                                                                                                            <tr>
+                                                                                                                <td rowspan="2" width="77" class="emailnomob" align="left" valign="top" style="width:77px;padding-top:12px;"><img src="https://imgur.com/7UzxReX.png" alt="" /></td>
+                                                                                                                <td class="table-row-width" align="left" valign="top" style="color:#1b1b1b;padding-top:7px;font-family: Arial, Helvetica, san-serif;font-size:14px;">Today’s Unsuccessful DM Lodgement</td>
+                                                                                                                <td align="right" valign="bottom" style="color:#1b1b1b;padding-top:7px;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:14px;">xxxxx</td>
+                                                                                                            </tr>
+                                                                                                            <tr>
+                                                                                                                <td align="left" valign="top" style="color:#1b1b1b;padding-top:16px;padding-bottom:5px;font-family: Arial, Helvetica, san-serif;font-size:14px;">Total Unsuccessful DMs Lodged</td>
+                                                                                                                <td align="right" valign="bottom" style="color:#1b1b1b;padding-top:16px;padding-bottom:5px;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:14px;">xxxxx</td>
+                                                                                                            </tr>
+                                                                                                        </tbody>
+                                                                                                    </table>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="table-row-padding no-top-pad" align="left" valign="top" style="padding:0 22px 16px 26px;">
+                                                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <td class="font-size-13 stack-column" align="left" valign="top" style="color:#1b1b1b;font-family: Arial, Helvetica, san-serif;font-size:17px;font-weight:bold;line-height:24px;">CARD MIGRATION CAPACITY (THROTTLE)</td>
+                                                                                                <td class="font-size-13 stack-column" align="right" valign="top" style="color:#1b1b1b;font-family: Arial, Helvetica, san-serif;font-size:17px;font-weight:bold;line-height:24px;">Jan 01 - 20</td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr class="emailnomob">
+                                                                                <td align="left" valign="middle" style="padding-bottom:38px;">
+                                                                                    <img border="0" width="528" style="width:528px; display:block; border-style:none;" src="https://imgur.com/nbWf855.png" alt="Divider" />
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="table-row-padding no-bottom-pad" align="left" valign="top" style="padding:0 22px 0px 26px;">
+                                                                                    <table class="makeFluid" width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <td class="stack-column bottom-pad-8 no-right-pad" width="33.3%" align="center" valign="top" style="width:33.3%;padding-right: 40px;">
+                                                                                                    <span class="font-size-24" style="color:#d20000;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:32px;">6,800</span>
+                                                                                                    <br class="emailnomob" /><br/>
+                                                                                                    <span class="font-size-12 line-height-29" style="color:#1b1b1b;font-family: Arial, Helvetica, san-serif;font-size:14px;line-height:24px;">Direct mail planned capacity</span>
+                                                                                                </td>
+                                                                                                <td class="stack-column bottom-pad-8 no-right-pad" width="33.3%" align="center" valign="top" style="width:33.3%;padding-right: 20px;">
+                                                                                                    <span class="font-size-24" style="color:#d20000;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:32px;">988,200</span>
+                                                                                                    <br class="emailnomob" /><br/>
+                                                                                                    <span class="font-size-12 line-height-29" style="color:#1b1b1b;font-family: Arial, Helvetica, san-serif;font-size:14px;line-height:24px;">Today's migration capacity for like for like switch</span>
+                                                                                                </td>
+                                                                                                <td class="stack-column bottom-pad-8 no-left-pad" width="33.3%" align="center" valign="top" style="width:33.3%;padding-left: 24px;">
+                                                                                                    <span class="font-size-24" style="color:#d20000;font-family: Arial, Helvetica, san-serif;font-weight:bold;font-size:32px;">8,120</span>
+                                                                                                    <br class="emailnomob" /><br/>
+                                                                                                    <span class="font-size-12 line-height-29" style="color:#1b1b1b;font-family: Arial, Helvetica, san-serif;font-size:14px;line-height:24px;">Today's migration capacity for customer upgrades</span>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- Row 3.3 ends -->
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <!-- Row 3 ends -->
+                                            <!-- ************************************** -->
+                                            <!-- Row 4 Starts -->
+                                            <tr>
+                                                <td align="center" valign="top" height="10" style="height:10px; background-color:#f1f2f6;"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left-right-pad-8 bg-color" align="center" valign="top" bgcolor="#ffffff" style="background-color:#ffffff; padding:34px 36px 45px 36px; border-radius:5px;">
+                                                    <table style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" border="0" cellspacing="0" cellpadding="0">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="table-row-padding" align="left" valign="top" style="padding:0 22px 20px 26px;font-family: Arial, Helvetica, san-serif;font-size:14px; font-weight:bold;color:#1b1b1b;">GLOSSARY OF TERMS</td>
+                                                            </tr>
+                                                            <tr class="emailnomob">
+                                                                <td align="left" valign="middle" style="padding-bottom:28px;">
+                                                                    <img border="0" width="528" style="width:528px; display:block; border-style:none;" src="https://imgur.com/nbWf855.png" alt="Divider" />
+                                                                </td>
+                                                            </tr>
+                                                            <!-- **************************** -->
+                                                            <!-- Header and copy set 1 begins -->
+                                                            <tr>
+                                                                <td align="left" valign="top" class="table-row-padding no-bottom-pad" style="padding:0 22px 10px 26px;">
+                                                                    <span style="font-family: Arial, Helvetica, san-serif;font-size:16px; font-weight:bold;color:#1b1b1b;">Phase Volume</span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="left" valign="top" class="table-row-padding no-bottom-pad" style="padding:0 22px 20px 26px;">
+                                                                    <span style="font-family: Arial, Helvetica, san-serif;font-size:14px; font-weight:normal;color:#1b1b1b;">Debet ludus corpora sea an, nobis congue luptatum his cu, corrumpit.</span>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- Header and copy set 1 ends -->
+                                                            <!-- ************************** -->
+                                                            <!-- Header and copy set 2 begins -->
+                                                            <tr>
+                                                                <td align="left" valign="top" class="table-row-padding no-bottom-pad" style="padding:0 22px 10px 26px;">
+                                                                    <span style="font-family: Arial, Helvetica, san-serif;font-size:16px; font-weight:bold;color:#1b1b1b;">Accounts Migrated</span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="left" valign="top" class="table-row-padding no-bottom-pad" style="padding:0 22px 20px 26px;">
+                                                                    <span style="font-family: Arial, Helvetica, san-serif;font-size:14px; font-weight:normal;color:#1b1b1b;">Debet ludus corpora sea an, nobis congue luptatum his cu, corrumpit.</span>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- Header and copy set 2 ends -->
+                                                            <!-- ************************** -->
+                                                            <!-- Header and copy set 3 begins -->
+                                                            <tr>
+                                                                <td align="left" valign="top" class="table-row-padding no-bottom-pad" style="padding:0 22px 10px 26px;">
+                                                                    <span style="font-family: Arial, Helvetica, san-serif;font-size:16px; font-weight:bold;color:#1b1b1b;">Today’s Notification DM Data Sent</span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="left" valign="top" class="table-row-padding no-bottom-pad" style="padding:0 22px 20px 26px;">
+                                                                    <span style="font-family: Arial, Helvetica, san-serif;font-size:14px; font-weight:normal;color:#1b1b1b;">Debet ludus corpora sea an, nobis congue luptatum his cu, corrumpit.</span>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- Header and copy set 3 ends -->
+                                                            <!-- ************************** -->
+                                                            <!-- Header and copy set 4 begins -->
+                                                            <tr>
+                                                                <td align="left" valign="top" class="table-row-padding no-bottom-pad" style="padding:0 22px 10px 26px;">
+                                                                    <span style="font-family: Arial, Helvetica, san-serif;font-size:16px; font-weight:bold;color:#1b1b1b;">Today’s Notification DM Lodgement</span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="left" valign="top" class="table-row-padding no-bottom-pad" style="padding:0 22px 20px 26px;">
+                                                                    <span style="font-family: Arial, Helvetica, san-serif;font-size:14px; font-weight:normal;color:#1b1b1b;">Debet ludus corpora sea an, nobis congue luptatum his cu, corrumpit.</span>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- Header and copy set 4 ends -->
+                                                            <!-- ************************** -->
+                                                            <!-- Header and copy set 5 begins -->
+                                                            <tr>
+                                                                <td align="left" valign="top" class="table-row-padding no-bottom-pad" style="padding:0 22px 10px 26px;">
+                                                                    <span style="font-family: Arial, Helvetica, san-serif;font-size:16px; font-weight:bold;color:#1b1b1b;">Total Notification DMs Lodged</span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="left" valign="top" class="table-row-padding no-bottom-pad" style="padding:0 22px 20px 26px;">
+                                                                    <span style="font-family: Arial, Helvetica, san-serif;font-size:14px; font-weight:normal;color:#1b1b1b;">Debet ludus corpora sea an, nobis congue luptatum his cu, corrumpit.</span>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- Header and copy set 5 ends -->
+                                                            <!-- ************************** -->
+                                                            <!-- Header and copy set 6 begins -->
+                                                            <tr>
+                                                                <td align="left" valign="top" class="table-row-padding no-bottom-pad" style="padding:0 22px 10px 26px;">
+                                                                    <span style="font-family: Arial, Helvetica, san-serif;font-size:16px; font-weight:bold;color:#1b1b1b;">Today’s Follow Up EDMs Sent</span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="left" valign="top" class="table-row-padding no-bottom-pad" style="padding:0 22px 20px 26px;">
+                                                                    <span style="font-family: Arial, Helvetica, san-serif;font-size:14px; font-weight:normal;color:#1b1b1b;">Debet ludus corpora sea an, nobis congue luptatum his cu, corrumpit.</span>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- Header and copy set 6 ends -->
+                                                            <!-- ************************** -->
+                                                            <!-- Header and copy set 7 begins -->
+                                                            <tr>
+                                                                <td align="left" valign="top" class="table-row-padding no-bottom-pad" style="padding:0 22px 10px 26px;">
+                                                                    <span style="font-family: Arial, Helvetica, san-serif;font-size:16px; font-weight:bold;color:#1b1b1b;">Total Follow Up EDMs Sent</span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="left" valign="top" class="table-row-padding no-bottom-pad" style="padding:0 22px 20px 26px;">
+                                                                    <span style="font-family: Arial, Helvetica, san-serif;font-size:14px; font-weight:normal;color:#1b1b1b;">Debet ludus corpora sea an, nobis congue luptatum his cu, corrumpit.</span>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- Header and copy set 7 ends -->
+                                                            <!-- ************************** -->
+                                                            <!-- Header and copy set 8 begins -->
+                                                            <tr>
+                                                                <td align="left" valign="top" class="table-row-padding no-bottom-pad" style="padding:0 22px 10px 26px;">
+                                                                    <span style="font-family: Arial, Helvetica, san-serif;font-size:16px; font-weight:bold;color:#1b1b1b;">Today’s Card Location (SMS/EDM) Sent</span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="left" valign="top" class="table-row-padding no-bottom-pad" style="padding:0 22px 20px 26px;">
+                                                                    <span style="font-family: Arial, Helvetica, san-serif;font-size:14px; font-weight:normal;color:#1b1b1b;">Debet ludus corpora sea an, nobis congue luptatum his cu, corrumpit.</span>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- Header and copy set 8 ends -->
+                                                            <!-- ************************** -->
+                                                            <!-- Header and copy set 9 begins -->
+                                                            <tr>
+                                                                <td align="left" valign="top" class="table-row-padding no-bottom-pad" style="padding:0 22px 10px 26px;">
+                                                                    <span style="font-family: Arial, Helvetica, san-serif;font-size:16px; font-weight:bold;color:#1b1b1b;">Total Card Location (EDM/SMS) Sent</span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="left" valign="top" class="table-row-padding no-bottom-pad" style="padding:0 22px 20px 26px;">
+                                                                    <span style="font-family: Arial, Helvetica, san-serif;font-size:14px; font-weight:normal;color:#1b1b1b;">Debet ludus corpora sea an, nobis congue luptatum his cu, corrumpit.</span>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- Header and copy set 9 ends -->
+                                                            <!-- ************************** -->
+                                                            <!-- Header and copy set 10 begins -->
+                                                            <tr>
+                                                                <td align="left" valign="top" class="table-row-padding no-bottom-pad" style="padding:0 22px 10px 26px;">
+                                                                    <span style="font-family: Arial, Helvetica, san-serif;font-size:16px; font-weight:bold;color:#1b1b1b;">Today’s Migration Volume</span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="left" valign="top" class="table-row-padding no-bottom-pad" style="padding:0 22px 20px 26px;">
+                                                                    <span style="font-family: Arial, Helvetica, san-serif;font-size:14px; font-weight:normal;color:#1b1b1b;">Debet ludus corpora sea an, nobis congue luptatum his cu, corrumpit.</span>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- Header and copy set 10 ends -->
+                                                            <!-- ************************** -->
+                                                            <!-- Header and copy set 11 begins -->
+                                                            <tr>
+                                                                <td align="left" valign="top" class="table-row-padding no-bottom-pad" style="padding:0 22px 10px 26px;">
+                                                                    <span style="font-family: Arial, Helvetica, san-serif;font-size:16px; font-weight:bold;color:#1b1b1b;">Total Migrations</span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="left" valign="top" class="table-row-padding no-bottom-pad" style="padding:0 22px 20px 26px;">
+                                                                    <span style="font-family: Arial, Helvetica, san-serif;font-size:14px; font-weight:normal;color:#1b1b1b;">Debet ludus corpora sea an, nobis congue luptatum his cu, corrumpit.</span>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- Header and copy set 11 ends -->
+                                                            <!-- ************************** -->
+                                                            <!-- Header and copy set 12 begins -->
+                                                            <tr>
+                                                                <td align="left" valign="top" class="table-row-padding no-bottom-pad" style="padding:0 22px 10px 26px;">
+                                                                    <span style="font-family: Arial, Helvetica, san-serif;font-size:16px; font-weight:bold;color:#1b1b1b;">Today’s Unsuccessful Notification</span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="left" valign="top" class="table-row-padding no-bottom-pad" style="padding:0 22px 20px 26px;">
+                                                                    <span style="font-family: Arial, Helvetica, san-serif;font-size:14px; font-weight:normal;color:#1b1b1b;">Debet ludus corpora sea an, nobis congue luptatum his cu, corrumpit.</span>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- Header and copy set 12 ends -->
+                                                            <!-- ************************** -->
+                                                            <!-- Header and copy set 13 begins -->
+                                                            <tr>
+                                                                <td align="left" valign="top" class="table-row-padding no-bottom-pad" style="padding:0 22px 10px 26px;">
+                                                                    <span style="font-family: Arial, Helvetica, san-serif;font-size:16px; font-weight:bold;color:#1b1b1b;">DM Lodgement</span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="left" valign="top" class="table-row-padding no-bottom-pad" style="padding:0 22px 20px 26px;">
+                                                                    <span style="font-family: Arial, Helvetica, san-serif;font-size:14px; font-weight:normal;color:#1b1b1b;">Debet ludus corpora sea an, nobis congue luptatum his cu, corrumpit.</span>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- Header and copy set 13 ends -->
+                                                            <!-- ************************** -->
+                                                            <!-- Header and copy set 14 begins -->
+                                                            <tr>
+                                                                <td align="left" valign="top" class="table-row-padding no-bottom-pad" style="padding:0 22px 10px 26px;">
+                                                                    <span style="font-family: Arial, Helvetica, san-serif;font-size:16px; font-weight:bold;color:#1b1b1b;">Total Notification DMs Lodged</span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td align="left" valign="top" class="table-row-padding no-bottom-pad" style="padding:0 22px 20px 26px;">
+                                                                    <span style="font-family: Arial, Helvetica, san-serif;font-size:14px; font-weight:normal;color:#1b1b1b;">Debet ludus corpora sea an, nobis congue luptatum his cu, corrumpit.</span>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- Header and copy set 14 ends -->
+                                                            <!-- ************************** -->
+
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- Inner table ends -->
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- Wrapper table ends -->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

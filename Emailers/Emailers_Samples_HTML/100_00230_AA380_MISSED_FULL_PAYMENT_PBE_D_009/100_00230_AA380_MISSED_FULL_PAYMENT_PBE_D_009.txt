@@ -1,0 +1,171 @@
+Get back up to date by making a payment
+View online
+<%domain.WebDomain%>/public/read_message.jsp?<%login_signature%>&amp;mid=<%message.PK%>
+
+----------------------------------------------------------------------
+
+Capital One 
+the card in your corner
+http://www.capitalone.co.uk/web/index.jsf
+
+Account Number
+* * * *   * * * *   * * * *   <acct_no_last_4>
+Find out more about
+safety & security
+#
+
+----------------------------------------------------------------------
+
+CATCH UP
+WITH YOUR PAYMANTS
+
+----------------------------------------------------------------------
+
+YOUR PAYMENT OF £149.10 IS NOW DUE.
+PAY ONLINE QUICKLY AND EASILY.
+
+----------------------------------------------------------------------
+
+Dear <forename>,
+
+<cstm_char_2>
+
+If you can, the best thing to do is to make your payment as soon as possible.
+Otherwise, please call us on 03​33 00​0 00​84 to see how we can help
+
+Easy ways to pay
+
+The quickest and easiest way to pay is through your secure personal 
+payment page. You can also pay using our mobile app.
+#
+
+Some really quick and easy ways of paying are by signing in to 
+your online account. You or by using our mobile app.
+#
+
+Once you’ve made this payment you can set up a Direct Debit so that your
+future payments are made on time automatically
+#
+
+How missed payments affect you
+
+Like all credit cards, because you’ve missed a payment you’ve been 
+chargeda late payment fee. It’s also likely to show on your credit file.
+Please makeyour payment or contact us for help straight away. The more 
+payments you miss, the more late payment fees and interest you’ll be 
+charged, making it harderto get your account back up to date.
+
+
+Having trouble paying?
+
+If you’re having difficulty paying or have any other questions, call 
+our support team on 03​33 00​0 00​84 to see how we can help or visit our 
+website. For free, independent advice you can contact any of the 
+organisations listed below.
+#
+
+Thanks for being a Capital One customer.
+
+Richard Rolls,
+Head of Customer Service
+----------------------------------------------------------------------
+
+AMOUNT DUE
+£<cstm_curr_4>
+
+----------------------------------------------------------------------
+
+If you’re able to pay now >>
+http://www.capitalone.co.uk/youraccount/index.jsf
+
+Access your online payment page quickly and easily through this email 
+for 7 days. If you’ve recently paid then please ignore this message
+----------------------------------------------------------------------
+
+OTHER WAYS TO PAY
+
+Call
+0333 000 0084
+
+Pay on the go with our mobile app
+Download now >>
+#
+
+Make your future payments easier
+Set up a Direct Debit >>
+#
+
+----------------------------------------------------------------------
+
+For free, independent advice, contact these non-profit organisations
+
+Step Change Debt Charity
+Freephone 0800 138 1111
+www.stepchange.org
+http://www.stepchange.org/
+
+Citizens Advice Bureau
+Find your local branch at:
+www.citizensadvice.co.uk
+http://www.citizensadvice.co.uk/
+
+PayPlan
+Free phone 08​00 91​7 78​23
+stepchange.org
+http://www.stepchange.org/
+
+----------------------------------------------------------------------
+
+Contact Us
+http://www.capitalone.co.uk/support/contact-us.jsf
+
+Privacy Policy
+http://www.capitalone.co.uk/web/privacy-statement.jsf
+
+Security Centre
+http://www.capitalone.co.uk/support/safety-and-security.jsf
+
+Help Prevent Fraud
+http://www.capitalone.co.uk/creditmadeclearer/credit-card-fraud-prevention.jsf
+
+----------------------------------------------------------------------
+Calls may be recorded/monitored for training purposes.
+
+Please read – important information
+This email is from Capital One about your credit card with us. 
+
+For added peace of mind our internet fraud protection includes anti-fraud
+protection, monitoring, identity theft prevention and support.
+
+Please do not reply to this email. If you would like to contact us please
+sign in to your account and send us a secure message using our 
+online account service or visit our website www.capitalone.co.uk.
+
+Safety and Security
+So you know that emails we send are genuinely from us, we will always
+quote the last 4 digits of your account number. We will never ask for 
+personal details about you or your Capital One account via email. If you 
+get an email that seems to be from us but you're not sure if it's genuine, 
+please let us know straight away. You can also visit the Capital One 
+security centre for our latest security advice.
+http://www.capitalone.co.uk/support/safety-and-security.jsf
+
+To ensure you always receive service emails from us, please add 
+CustomerAccounts@capitaloneonline.co.uk, 
+CustomerAccounts@estatement.capitaloneonline.co.uk, 
+Customer.accounts@email.capitalone.co.uk and 
+CapitalOne@notification.capitalone.co.uk to your contacts list.
+
+If you prefer not to receive emails regarding payments you can opt out.
+Please note that this may take up to 30 days.
+
+®A registered mark of Capital One. 
+
+©Capital One. Capital One (Europe) plc: Registered Office Trent House,
+Station Street, Nottingham, NG2 3HX. Registered in England and Wales. 
+Company Number: 38​79​0​23. Authorised and Regulated by the Financial Conduct 
+Authority.
+
+10000​230/AA380/03​16
+ 
+ 

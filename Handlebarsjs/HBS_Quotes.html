@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Handlebrs - Templating</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="./handlebars-v4.0.11.js"></script>
+  <style>
+    h3 {
+      padding: 0px;
+      margin: 0px;
+    }
+
+    .main {
+      margin: 0 auto;
+      width: 900px;
+    }
+
+    .heading {
+      color: gray;
+      font-family: Arial, helvetica, sans-serif;
+      border-bottom: 1px solid lightgray;
+      border-radius: 5px;
+      padding: 10px;
+    }
+
+    .content {
+      color: #666666;
+      font-family: Arial, helvetica, sans-serif;
+      font-style: italic;
+      font-size: 14px;
+      line-height: 150%;
+      padding-left: 10px;
+    }
+
+    .container {
+      border: 1px solid lightgray;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      box-shadow: 1px 1px 7px #999999;
+      -webkit-box-shadow: 1px 1px 7px #999999;
+      -moz-box-shadow: 1px 1px 7px #999999;
+      -ms-box-shadow: 1px 1px 7px #999999;
+      -o-box-shadow: 1px 1px 7px #999999;
+    }
+
+    .color-sea-green {
+      color: lightseagreen;
+    }
+
+    .footer {
+      padding: 10px;
+    }
+
+    a {
+      text-decoration: none;
+      cursor: pointer;
+      color: purple;
+      border-bottom: 1px solid purple;
+    }
+
+    .redText {
+      color: red;
+    }
+
+    .blueText {
+      color: blue;
+    }
+
+    .greenText {
+      color: green;
+    }
+
+    ]
+  </style>
+</head>
+
+<body>
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+  <div class="main">
+    <div id="my-quotes"></div>
+  </div>
+
+
+  <script id="quote-template" type="type/x-handlebars-template">
+      {{# each people}} 
+        <div class="container">
+          <h3 class="heading">{{name}} Quotes</h3>
+          <ol>
+            {{# each quotes}}
+              <li class="content">{{quote}}</li>
+            {{/each}}
+          </ol>
+          <div class="footer">
+              {{{bio}}}
+             <p>{{linkFunction name link}}</p>
+             
+          </div>
+        </div>
+      {{/each}}
+
+      {{changeColor "Color Changed to" color="red"}}
+      <p>{{greetings}}</p>
+    </script>
+
+  <script type="text/javascript">
+    var quoteInfo = document.getElementById("quote-template").innerHTML;
+    var template = Handlebars.compile(quoteInfo);
+
+    Handlebars.registerHelper("linkFunction", function (text, url) {
+      text = Handlebars.Utils.escapeExpression(text);
+      url = Handlebars.Utils.escapeExpression(url);
+      var theLink = '<a href="' + url + '">' + text + '</a>';
+      return new Handlebars.SafeString(theLink);
+    });
+
+    // Change color function
+
+    Handlebars.registerHelper("changeColor", function (text, options) {
+      text = Handlebars.Utils.escapeExpression(text);
+      if (options.hash.color === "red") {
+        return new Handlebars.SafeString("<span class='redText'>" + text + " : " + options.hash.color + "</span>");
+      } else if (options.hash.color === "blue") {
+        return new Handlebars.SafeString("<span class='blueText'>" + text + " : " + options.hash.color + "</span>");
+      } else if (options.hash.color === "green") {
+        return new Handlebars.SafeString("<span class='greenText'>" + text + " : " + options.hash.color + "</span>");
+      }
+    });
+
+    Handlebars.registerHelper("greetings", function (options) {
+      // console.log("options :: ", options.data.root.data.lang);
+      switch (options.data.root.data.lang) {
+        case "English-US":
+          return "Hello";
+          break;
+        case "Spanish":
+          return "Hola";
+          break;
+        case "French":
+          return "Bonjour";
+          break;
+        default:
+          return "No greetings";
+      }
+    });
+
+    var quotesBy = {
+      people: [
+        {
+          name: "Bill Gates",
+          quotes: [
+            { quote: "Your most unhappy customers are your greatest source of learning." },
+            { quote: "Success is a lousy teacher. It seduces smart people into thinking they can't lose." },
+            { quote: "Life is not fair; get used to it." },
+          ],
+          bio: "<i class='color-sea-green'>This uses HTML tag in JSON which is interpreted by Handlebars into HTML using triple curly baraces.</i>",
+          link: "https://www.google.co.in/search?ei=4YUWWp_bM4XyvgT0n7P4BQ&q=bill+gate+quotes&oq=bill+gate+quotes&gs_l=psy-ab.3..0i7i30k1l10.20989.23618.0.24795.11.10.0.0.0.0.936.1974.0j1j2j1j6-1.5.0....0...1c.1.64.psy-ab..8.3.1553...35i39k1j0i131i67k1j0i67k1.0.dvPNUdPKVIU"
+        },
+        {
+          name: "Barack Obama",
+          quotes: [
+            { quote: "Change will not come if we wait for some other person or some other time. We are the ones we've been waiting for. We are the change that we seek." },
+            { quote: "If you're walking down the right path and you're willing to keep walking, eventually you'll make progress" },
+            { quote: "Money is not the only answer, but it makes a difference." },
+          ],
+          bio: "<i class='color-sea-green'>This uses HTML tag in JSON which is interpreted by Handlebars into HTML using triple curly baraces.</i>",
+          link: "https://www.google.co.in/search?q=obama+quotes&oq=obama+quotes&aqs=chrome.0.0l6.7722j0j7&sourceid=chrome&ie=UTF-8"
+        },
+        {
+          name: "Norman Vincent Peale",
+          quotes: [
+            { quote: "Change your thoughts and you change your world." },
+            { quote: "Empty pockets never held anyone back. Only empty heads and empty hearts can do that." },
+            { quote: "It's always too early to quit." },
+          ],
+          bio: "<i class='color-sea-green'>This uses HTML tag in JSON which is interpreted by Handlebars into HTML using triple curly baraces.</i>",
+          link: "https://www.google.co.in/search?ei=toUWWuWBLsT9vASG0I2QDg&q=norman+vincent+quotes&oq=norman+vincent+quotes&gs_l=psy-ab.3...32814.41699.0.41905.26.22.0.0.0.0.716.716.6-1.1.0....0...1c.1.64.psy-ab..25.0.0....0.W94W0xWnN4A"
+        }
+      ],
+      data: {
+        lang: "English-US"
+      }
+    }
+    var quoteData = template(quotesBy);
+    document.getElementById("my-quotes").innerHTML += quoteData;
+  </script>
+</body>
+
+</html>

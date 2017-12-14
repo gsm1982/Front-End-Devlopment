@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HBS Partials</title>
+  <script src="./handlebars-v4.0.11.js"></script>
+</head>
+<body>
+
+  <div id="content">HI</div>
+
+  <script type="text/x-handlebars-template" id="the-template">
+    {{> myPartial}}
+
+    <div class="Post">
+      {{> askQuestions tagName="h2"}}
+      <h2>Suggestions</h2>
+      {{# each comments}}
+        {{> askQuestions tagName="h3"}}
+      {{/each}}
+    </div>
+  </script>
+
+  <script type="text/javascript">
+    var templateInfo = document.getElementById('the-template').innerHTML;
+    
+    var template = Handlebars.compile(templateInfo);
+    
+    Handlebars.registerPartial("myPartial", '{{name}}');
+    Handlebars.registerPartial("askQuestions", '<{{tagName}}>{{author}}</tagName>' + '<div class="comment">{{comment}}</div>');
+
+    var templateData = template({
+      name: "Derek",
+      author: "John Smith",
+      comment: "Where should we vacation?",
+      comments: [
+        {
+          author: "John Smith",
+          comment: "Phi Phi island",
+        },
+        {
+          author: "Paul Smith",
+          comment: "Disneyland",
+        }
+      ]
+    });
+    document.getElementById('content').innerHTML += templateData;
+  </script>
+  
+</body>
+</html>
