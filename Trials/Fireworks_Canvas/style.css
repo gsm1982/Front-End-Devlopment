@@ -1,0 +1,10 @@
+body {
+    background-color: #ffffff;
+    margin: 50px;
+    overflow: hidden;
+}
+canvas{
+  border: 1px solid #ffffff;
+  /* background-color: #000000; */
+  background-image: url("./bg.jpg");
+}
